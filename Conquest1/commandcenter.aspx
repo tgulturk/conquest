@@ -11,33 +11,37 @@
         <br />
         <table>
             <tr>
-                <td><asp:Label runat="server" ID="Label1" Text="Mızrakçı :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label1" Text="Mızrakçı :" Height="24px" Width="95px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbMizrak" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblMizrak" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
                 <td style="width:50px"></td>
-                <td><asp:Label runat="server" ID="Label3" Text="Casus :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label3" Text="Casus :" Height="24px" Width="95px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbCasus" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblCasus" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
                 <td style="width:50px"></td>
-                <td><asp:Label runat="server" ID="Label6" Text="Misyoner :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label10" Text="Şahmerdan :" Height="24px" Width="95px"></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="tbSahmerdan" Width="60px"></asp:TextBox></td>
+                <td><asp:Label runat="server" ID="lblSahmerdan" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
+            </tr>
+            <tr>
+                <td><asp:Label runat="server" ID="Label2" Text="Kılıç Ustası :" Height="24px" Width="95px"></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="tbKilic" Width="60px"></asp:TextBox></td>
+                <td><asp:Label runat="server" ID="lblKilic" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
+                <td style="width:50px"></td>
+                <td><asp:Label runat="server" ID="Label5" Text="Hafif Atlı :" Height="24px" Width="95px"></asp:Label></td>
+                <td><asp:TextBox runat="server" ID="tbHafif" Width="60px"></asp:TextBox></td>
+                <td><asp:Label runat="server" ID="lblHafif" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
+                <td style="width:50px"></td>
+                <td><asp:Label runat="server" ID="Label6" Text="Misyoner :" Height="24px" Width="95px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbMisyoner" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblMisyoner" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" ID="Label2" Text="Kılıç Ustası :" Height="24px" Width="85px"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="tbKilic" Width="60px"></asp:TextBox></td>
-                <td><asp:Label runat="server" ID="lblKilic" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
-                <td style="width:50px"></td>
-                <td><asp:Label runat="server" ID="Label5" Text="Hafif Atlı :" Height="24px" Width="85px"></asp:Label></td>
-                <td><asp:TextBox runat="server" ID="tbHafif" Width="60px"></asp:TextBox></td>
-                <td><asp:Label runat="server" ID="lblHafif" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
-            </tr>
-            <tr>
-                <td><asp:Label runat="server" ID="Label4" Text="Baltacı :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label4" Text="Baltacı :" Height="24px" Width="95px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbBaltaci" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblBaltaci" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
                 <td style="width:50px"></td>
-                <td><asp:Label runat="server" ID="Label7" Text="Ağır Atlı :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label7" Text="Ağır Atlı :" Height="24px" Width="95px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbAgir" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblAgir" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"></asp:Label></td>
             </tr>

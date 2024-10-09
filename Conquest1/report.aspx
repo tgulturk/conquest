@@ -163,6 +163,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label21" Text="Casus" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label24" Text="Hafif Atlı" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label25" Text="Ağır Atlı" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="Label39" Text="Şahmerdan" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label26" Text="Misyoner" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                             <tr>
@@ -173,6 +174,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSMcasus" Text="0" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSMhafif" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSMagir" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="lblSMSahmerdan" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSMmisyoner" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                             <tr>
@@ -183,6 +185,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSKcasus" Text="0" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSKhafif" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSKagir" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="lblSKSahmerdan" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblSKmisyoner" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                         </table>
@@ -207,6 +210,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label31" Text="Casus" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label32" Text="Hafif Atlı" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label33" Text="Ağır Atlı" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="Label41" Text="Şahmerdan" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="Label35" Text="Misyoner" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                             <tr>
@@ -217,6 +221,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDMcasus" Text="0" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDMhafif" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDMagir" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="lblDMSahmerdan" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDMmisyoner" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                             <tr>
@@ -227,6 +232,7 @@
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDKcasus" Text="0" Width="55px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDKhafif" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDKagir" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
+                                <td style="text-align:center"><asp:Label runat="server" ID="lblDKSahmerdan" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                                 <td style="text-align:center"><asp:Label runat="server" ID="lblDKmisyoner" Text="0" Width="65px" Font-Size="Small"></asp:Label></td>
                             </tr>
                         </table>

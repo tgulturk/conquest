@@ -59,6 +59,7 @@ namespace Conquest1
                 case "11": Response.Redirect("wall.aspx"); break;
                 case "12": Response.Redirect("market.aspx"); break;
                 case "13": Response.Redirect("palace.aspx"); break;
+                case "14": Response.Redirect("workshop.aspx"); break;
                 default:
                     break;
             }

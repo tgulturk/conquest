@@ -54,6 +54,7 @@ namespace Conquest1
                 lblHafif.Text = "(" + dt.Rows[4]["Sayi"].ToString() + "/" + dt2.Rows[4]["Sayi"].ToString() + ")";
                 lblAgir.Text = "(" + dt.Rows[5]["Sayi"].ToString() + "/" + dt2.Rows[5]["Sayi"].ToString() + ")";
                 lblMisyoner.Text = "(" + dt.Rows[6]["Sayi"].ToString() + "/" + dt2.Rows[6]["Sayi"].ToString() + ")";
+                lblSahmerdan.Text = "(" + dt.Rows[7]["Sayi"].ToString() + "/" + dt2.Rows[7]["Sayi"].ToString() + ")";
 
                 rep1.DataSource = con.GidenSaldiri(villageID);
                 rep1.DataBind();
@@ -67,6 +68,7 @@ namespace Conquest1
         protected int HızBul(int[] dizi)
         {
             if (dizi[6] != 0) return 120;
+            else if (dizi[7] != 0) return 80;
             else if (dizi[1] != 0) return 70;
             else if (dizi[0] != 0) return 60;
             else if (dizi[2] != 0) return 50;
@@ -80,7 +82,7 @@ namespace Conquest1
             String villageID = Session["VillageID"].ToString();
             DataTable dt = con.getSoldiers(villageID);
 
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 8; i++)
             {
                 if (ordu[i] > Convert.ToInt32(dt.Rows[i]["Sayi"].ToString())) return false;
             }
@@ -91,7 +93,7 @@ namespace Conquest1
         {
             String villageID = Session["VillageID"].ToString();
 
-            int[] ordu = new int[7];
+            int[] ordu = new int[8];
             ordu[0] = Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
             ordu[1] = Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
             ordu[2] = Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
@@ -99,8 +101,9 @@ namespace Conquest1
             ordu[4] = Convert.ToInt32(tbHafif.Text == "" ? "0" : tbHafif.Text);
             ordu[5] = Convert.ToInt32(tbAgir.Text == "" ? "0" : tbAgir.Text);
             ordu[6] = Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+            ordu[7] = Convert.ToInt32(tbSahmerdan.Text == "" ? "0" : tbSahmerdan.Text);
 
-            if (ordu[0] == 0 && ordu[1] == 0 && ordu[2] == 0 && ordu[3] == 0 && ordu[4] == 0 && ordu[5] == 0 && ordu[6] == 0)
+            if (ordu[0] == 0 && ordu[1] == 0 && ordu[2] == 0 && ordu[3] == 0 && ordu[4] == 0 && ordu[5] == 0 && ordu[6] == 0 && ordu[7] == 0)
             {
                 lblHata.Text = "Hiç Asker Seçmediniz";
             }

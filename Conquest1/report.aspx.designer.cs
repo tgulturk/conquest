@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Conquest1 {
-    
-    
-    public partial class report {
-        
+namespace Conquest1
+{
+
+
+    public partial class report
+    {
+
         /// <summary>
         /// Upd1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel Upd1;
-        
+
         /// <summary>
         /// Menu1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Menu Menu1;
-        
+
         /// <summary>
         /// UpdatePanel1 control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
+
         /// <summary>
         /// btnSil control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSil;
-        
+
         /// <summary>
         /// btnOkundu control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnOkundu;
-        
+
         /// <summary>
         /// MultiView1 control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.MultiView MultiView1;
-        
+
         /// <summary>
         /// View1 control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View1;
-        
+
         /// <summary>
         /// lb1 control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lb1;
-        
+
         /// <summary>
         /// lblKisi control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblKisi;
-        
+
         /// <summary>
         /// Label99 control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label99;
-        
+
         /// <summary>
         /// rep control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Repeater rep;
-        
+
         /// <summary>
         /// View2 control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View2;
-        
+
         /// <summary>
         /// Label3 control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label3;
-        
+
         /// <summary>
         /// lblkonu control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblkonu;
-        
+
         /// <summary>
         /// Label7 control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label7;
-        
+
         /// <summary>
         /// lbltarih control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbltarih;
-        
+
         /// <summary>
         /// Label1 control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
-        
+
         /// <summary>
         /// lbGonderen control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbGonderen;
-        
+
         /// <summary>
         /// Label8 control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label8;
-        
+
         /// <summary>
         /// lbKoy control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbKoy;
-        
+
         /// <summary>
         /// Label10 control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label10;
-        
+
         /// <summary>
         /// lbAlici control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbAlici;
-        
+
         /// <summary>
         /// Label12 control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label12;
-        
+
         /// <summary>
         /// lblAköy control.
         /// </summary>
@@ -227,7 +229,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lblAköy;
-        
+
         /// <summary>
         /// Label9 control.
         /// </summary>
@@ -236,7 +238,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label9;
-        
+
         /// <summary>
         /// lblOdun control.
         /// </summary>
@@ -245,7 +247,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblOdun;
-        
+
         /// <summary>
         /// Label13 control.
         /// </summary>
@@ -254,7 +256,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label13;
-        
+
         /// <summary>
         /// lblKil control.
         /// </summary>
@@ -263,7 +265,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblKil;
-        
+
         /// <summary>
         /// Label15 control.
         /// </summary>
@@ -272,7 +274,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label15;
-        
+
         /// <summary>
         /// lblDemir control.
         /// </summary>
@@ -281,7 +283,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDemir;
-        
+
         /// <summary>
         /// View3 control.
         /// </summary>
@@ -290,7 +292,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View3;
-        
+
         /// <summary>
         /// Label2 control.
         /// </summary>
@@ -299,7 +301,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label2;
-        
+
         /// <summary>
         /// lblRkonu control.
         /// </summary>
@@ -308,7 +310,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRkonu;
-        
+
         /// <summary>
         /// Label4 control.
         /// </summary>
@@ -317,7 +319,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label4;
-        
+
         /// <summary>
         /// lblSonuc control.
         /// </summary>
@@ -326,7 +328,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSonuc;
-        
+
         /// <summary>
         /// Label5 control.
         /// </summary>
@@ -335,7 +337,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label5;
-        
+
         /// <summary>
         /// lblRtarih control.
         /// </summary>
@@ -344,7 +346,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRtarih;
-        
+
         /// <summary>
         /// Label11 control.
         /// </summary>
@@ -353,7 +355,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label11;
-        
+
         /// <summary>
         /// lbRgonderen control.
         /// </summary>
@@ -362,7 +364,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRgonderen;
-        
+
         /// <summary>
         /// Label14 control.
         /// </summary>
@@ -371,7 +373,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label14;
-        
+
         /// <summary>
         /// lbRgkoy control.
         /// </summary>
@@ -380,7 +382,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRgkoy;
-        
+
         /// <summary>
         /// Label23 control.
         /// </summary>
@@ -389,7 +391,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label23;
-        
+
         /// <summary>
         /// Label6 control.
         /// </summary>
@@ -398,7 +400,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label6;
-        
+
         /// <summary>
         /// Label19 control.
         /// </summary>
@@ -407,7 +409,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label19;
-        
+
         /// <summary>
         /// Label21 control.
         /// </summary>
@@ -416,7 +418,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label21;
-        
+
         /// <summary>
         /// Label24 control.
         /// </summary>
@@ -425,7 +427,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label24;
-        
+
         /// <summary>
         /// Label25 control.
         /// </summary>
@@ -434,7 +436,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label25;
-        
+
+        /// <summary>
+        /// Label39 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label39;
+
         /// <summary>
         /// Label26 control.
         /// </summary>
@@ -443,7 +454,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label26;
-        
+
         /// <summary>
         /// Label34 control.
         /// </summary>
@@ -452,7 +463,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label34;
-        
+
         /// <summary>
         /// lblSMmizrak control.
         /// </summary>
@@ -461,7 +472,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMmizrak;
-        
+
         /// <summary>
         /// lblSMkilic control.
         /// </summary>
@@ -470,7 +481,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMkilic;
-        
+
         /// <summary>
         /// lblSMbaltaci control.
         /// </summary>
@@ -479,7 +490,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMbaltaci;
-        
+
         /// <summary>
         /// lblSMcasus control.
         /// </summary>
@@ -488,7 +499,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMcasus;
-        
+
         /// <summary>
         /// lblSMhafif control.
         /// </summary>
@@ -497,7 +508,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMhafif;
-        
+
         /// <summary>
         /// lblSMagir control.
         /// </summary>
@@ -506,7 +517,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMagir;
-        
+
+        /// <summary>
+        /// lblSMSahmerdan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSMSahmerdan;
+
         /// <summary>
         /// lblSMmisyoner control.
         /// </summary>
@@ -515,7 +535,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSMmisyoner;
-        
+
         /// <summary>
         /// Label27 control.
         /// </summary>
@@ -524,7 +544,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label27;
-        
+
         /// <summary>
         /// lblSKmizrak control.
         /// </summary>
@@ -533,7 +553,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKmizrak;
-        
+
         /// <summary>
         /// lblSKkilic control.
         /// </summary>
@@ -542,7 +562,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKkilic;
-        
+
         /// <summary>
         /// lblSKbaltaci control.
         /// </summary>
@@ -551,7 +571,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKbaltaci;
-        
+
         /// <summary>
         /// lblSKcasus control.
         /// </summary>
@@ -560,7 +580,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKcasus;
-        
+
         /// <summary>
         /// lblSKhafif control.
         /// </summary>
@@ -569,7 +589,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKhafif;
-        
+
         /// <summary>
         /// lblSKagir control.
         /// </summary>
@@ -578,7 +598,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKagir;
-        
+
+        /// <summary>
+        /// lblSKSahmerdan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSKSahmerdan;
+
         /// <summary>
         /// lblSKmisyoner control.
         /// </summary>
@@ -587,7 +616,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblSKmisyoner;
-        
+
         /// <summary>
         /// Label16 control.
         /// </summary>
@@ -596,7 +625,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label16;
-        
+
         /// <summary>
         /// lbRalici control.
         /// </summary>
@@ -605,7 +634,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRalici;
-        
+
         /// <summary>
         /// Label17 control.
         /// </summary>
@@ -614,7 +643,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label17;
-        
+
         /// <summary>
         /// lbRakoy control.
         /// </summary>
@@ -623,7 +652,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lbRakoy;
-        
+
         /// <summary>
         /// Label28 control.
         /// </summary>
@@ -632,7 +661,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label28;
-        
+
         /// <summary>
         /// Label29 control.
         /// </summary>
@@ -641,7 +670,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label29;
-        
+
         /// <summary>
         /// Label30 control.
         /// </summary>
@@ -650,7 +679,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label30;
-        
+
         /// <summary>
         /// Label31 control.
         /// </summary>
@@ -659,7 +688,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label31;
-        
+
         /// <summary>
         /// Label32 control.
         /// </summary>
@@ -668,7 +697,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label32;
-        
+
         /// <summary>
         /// Label33 control.
         /// </summary>
@@ -677,7 +706,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label33;
-        
+
+        /// <summary>
+        /// Label41 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label41;
+
         /// <summary>
         /// Label35 control.
         /// </summary>
@@ -686,7 +724,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label35;
-        
+
         /// <summary>
         /// Label36 control.
         /// </summary>
@@ -695,7 +733,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label36;
-        
+
         /// <summary>
         /// lblDMmizrak control.
         /// </summary>
@@ -704,7 +742,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMmizrak;
-        
+
         /// <summary>
         /// lblDMkilic control.
         /// </summary>
@@ -713,7 +751,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMkilic;
-        
+
         /// <summary>
         /// lblDMbaltaci control.
         /// </summary>
@@ -722,7 +760,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMbaltaci;
-        
+
         /// <summary>
         /// lblDMcasus control.
         /// </summary>
@@ -731,7 +769,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMcasus;
-        
+
         /// <summary>
         /// lblDMhafif control.
         /// </summary>
@@ -740,7 +778,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMhafif;
-        
+
         /// <summary>
         /// lblDMagir control.
         /// </summary>
@@ -749,7 +787,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMagir;
-        
+
+        /// <summary>
+        /// lblDMSahmerdan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDMSahmerdan;
+
         /// <summary>
         /// lblDMmisyoner control.
         /// </summary>
@@ -758,7 +805,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDMmisyoner;
-        
+
         /// <summary>
         /// Label44 control.
         /// </summary>
@@ -767,7 +814,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label44;
-        
+
         /// <summary>
         /// lblDKmizrak control.
         /// </summary>
@@ -776,7 +823,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKmizrak;
-        
+
         /// <summary>
         /// lblDKkilic control.
         /// </summary>
@@ -785,7 +832,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKkilic;
-        
+
         /// <summary>
         /// lblDKbaltaci control.
         /// </summary>
@@ -794,7 +841,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKbaltaci;
-        
+
         /// <summary>
         /// lblDKcasus control.
         /// </summary>
@@ -803,7 +850,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKcasus;
-        
+
         /// <summary>
         /// lblDKhafif control.
         /// </summary>
@@ -812,7 +859,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKhafif;
-        
+
         /// <summary>
         /// lblDKagir control.
         /// </summary>
@@ -821,7 +868,16 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKagir;
-        
+
+        /// <summary>
+        /// lblDKSahmerdan control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDKSahmerdan;
+
         /// <summary>
         /// lblDKmisyoner control.
         /// </summary>
@@ -830,7 +886,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblDKmisyoner;
-        
+
         /// <summary>
         /// lblBdurum control.
         /// </summary>
@@ -839,7 +895,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblBdurum;
-        
+
         /// <summary>
         /// lblblb control.
         /// </summary>
@@ -848,7 +904,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblblb;
-        
+
         /// <summary>
         /// Label18 control.
         /// </summary>
@@ -857,7 +913,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label18;
-        
+
         /// <summary>
         /// lblRodun control.
         /// </summary>
@@ -866,7 +922,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRodun;
-        
+
         /// <summary>
         /// Label20 control.
         /// </summary>
@@ -875,7 +931,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label20;
-        
+
         /// <summary>
         /// lblRkil control.
         /// </summary>
@@ -884,7 +940,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRkil;
-        
+
         /// <summary>
         /// Label22 control.
         /// </summary>
@@ -893,7 +949,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label22;
-        
+
         /// <summary>
         /// lblRdemir control.
         /// </summary>
@@ -902,7 +958,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRdemir;
-        
+
         /// <summary>
         /// Label37 control.
         /// </summary>
@@ -911,7 +967,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label37;
-        
+
         /// <summary>
         /// Label38 control.
         /// </summary>
@@ -920,7 +976,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label38;
-        
+
         /// <summary>
         /// lblCodun control.
         /// </summary>
@@ -929,7 +985,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCodun;
-        
+
         /// <summary>
         /// Label40 control.
         /// </summary>
@@ -938,7 +994,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label40;
-        
+
         /// <summary>
         /// lblCkil control.
         /// </summary>
@@ -947,7 +1003,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCkil;
-        
+
         /// <summary>
         /// Label42 control.
         /// </summary>
@@ -956,7 +1012,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label42;
-        
+
         /// <summary>
         /// lblCdemir control.
         /// </summary>
@@ -965,7 +1021,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblCdemir;
-        
+
         /// <summary>
         /// Label45 control.
         /// </summary>
@@ -974,7 +1030,7 @@ namespace Conquest1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label45;
-        
+
         /// <summary>
         /// lblCduvar control.
         /// </summary>

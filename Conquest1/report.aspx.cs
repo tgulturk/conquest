@@ -215,6 +215,10 @@ namespace Conquest1
                 lblSKagir.Text = dt2.Rows[5]["skCount"].ToString();
                 lblDMagir.Text = dt2.Rows[5]["dCount"].ToString();
                 lblDKagir.Text = dt2.Rows[5]["dkCount"].ToString();
+                lblSMSahmerdan.Text = dt2.Rows[7]["sCount"].ToString();
+                lblSKSahmerdan.Text = dt2.Rows[7]["skCount"].ToString();
+                lblDMSahmerdan.Text = dt2.Rows[7]["dCount"].ToString();
+                lblDKSahmerdan.Text = dt2.Rows[7]["dkCount"].ToString();
                 lblSMmisyoner.Text = dt2.Rows[6]["sCount"].ToString();
                 lblSKmisyoner.Text = dt2.Rows[6]["skCount"].ToString();
                 lblDMmisyoner.Text = dt2.Rows[6]["dCount"].ToString();
