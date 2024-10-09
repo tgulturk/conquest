@@ -1,0 +1,2 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeFile="PageLoadTime.ascx.cs" Inherits="User_controls_PageLoadTime" %>
+<asp:Label id="lblPageLoadTime" runat="server" Font-Size="X-Small" ForeColor="#702604" EnableViewState="False" />

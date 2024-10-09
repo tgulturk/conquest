@@ -1,0 +1,166 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="village.master.cs" Inherits="Conquest1.village" %>
+<%@ Register Src="~/PageLoadTime.ascx" TagName="PageLoad" TagPrefix="pl" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="content.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    </head>
+<body>
+    
+    <form id="form1" style="height:100%" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server">
+    </asp:ScriptManager>
+    <div class="top_bar">
+        <div class="bg_left"></div>
+        <div class="bg_right"></div>
+    </div>
+    <div class="top_shadow"></div>
+    <div class="top_background"></div>
+    <div id="topmenu">
+        <div id="topContainer">
+            <div id="topContent">
+                
+                <asp:LinkButton ID="lbTopluBakis" runat="server" CssClass="button" 
+                    Font-Underline="False" ForeColor="White" onclick="lbTopluBakis_Click">Toplu Bakış</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lbRaporlar" runat="server" CssClass="button" 
+                    Font-Underline="False" ForeColor="White" onclick="lbRaporlar_Click">Raporlar</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;                
+                <asp:LinkButton ID="lbMesajlar" runat="server" CssClass="button" 
+                     Font-Underline="False" ForeColor="White" onclick="lbMesajlar_Click">Mesajlar</asp:LinkButton>                        
+                &nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lbSiralama" runat="server" CssClass="button" 
+                    Font-Underline="False" ForeColor="White" onclick="lbSiralama_Click">Sıralama</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lbAyarlar" runat="server" CssClass="button" 
+                    Font-Underline="False" ForeColor="White" onclick="lbAyarlar_Click">Ayarlar</asp:LinkButton>
+                &nbsp;&nbsp;&nbsp;
+                <asp:LinkButton ID="lbCikis" runat="server" CssClass="button" 
+                    Font-Underline="False" ForeColor="White" onclick="lbCikis1_Click">Çıkış</asp:LinkButton>
+                
+            </div>
+        </div>
+    </div>
+    <div id="middle">
+        <div style="height:55px;"></div>
+            <div id="resourcebar">
+                <div id="RBSol">
+                    <asp:LinkButton ID="lbMaps" runat="server" Text="Harita" ForeColor="#702604" Font-Bold="true"
+                     Font-Size="Small" Font-Overline="false" onclick="lbMaps_Click"></asp:LinkButton>&nbsp | 
+                    <asp:LinkButton ID="LbKoyAdi" runat="server" Text="KÖY ADI" ForeColor="#702604" Font-Bold="true"
+                     Font-Size="Small" onclick="LbKoyAdi_Click" Font-Overline="false"></asp:LinkButton>
+                    <asp:Label ID="lblCoordinate" runat="server" Text="Koordinat" Font-Bold="True" 
+                        Font-Size="Small"></asp:Label>           
+                </div>
+                <div id="RBSag">
+                    <div style="width:21px; height:18px; float:left;"><asp:ImageButton ID="ibWood" runat="server" AlternateText="Odun" 
+                        ImageUrl="images/wood.png" Width="18px" ToolTip="Odun" /></div>
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server" UpdateMode="Conditional" >
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>         
+                        <ContentTemplate>                                 
+                                <asp:Label ID="lblOdun" runat="server" Text="Label"></asp:Label>                                                 
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div> 
+                    <div style="margin-left:10px; height:18px; width:21px; float:left;"><asp:ImageButton ID="ImageButton1" runat="server" AlternateText="Odun" ImageUrl="images/clay.png" ToolTip="Kil" /></div>
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>                    
+                        <ContentTemplate>          
+                            <asp:Label ID="lblKil" runat="server" Text="Label"></asp:Label>                        
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div> 
+                    <div style="margin-left:10px; width:21px; height:18px; float:left;"><asp:ImageButton ID="ImageButton2" runat="server" AlternateText="Odun" ImageUrl="images/iron.png" ToolTip="Demir" /></div>
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel3" runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>                    
+                        <ContentTemplate>          
+                            <asp:Label ID="lblDemir" runat="server" Text="Label"></asp:Label>                       
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div>
+                    <div style="margin-left:20px; width:21px; height:18px; float:left;"><asp:ImageButton ID="ImageButton3" runat="server" AlternateText="Depo" ImageUrl="images/depo.png" ToolTip="Depo Kapasitesi" /></div>
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel4" runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>                    
+                        <ContentTemplate>          
+                            <asp:Label ID="lblCapacity" runat="server" Text="Label"></asp:Label>                       
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div>
+                    <div style="margin-left:20px; width:21px; height:18px; float:left;"><asp:ImageButton ID="ImageButton4" runat="server" AlternateText="Pop" ImageUrl="images/pop.png" ToolTip="Popülasyon" /></div>
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel5" runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>                    
+                        <ContentTemplate>          
+                            <asp:Label ID="lblPopused" runat="server" Text="Label"></asp:Label>
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div>  
+                    <div style="max-width:70px; min-width:20px; float:left;">
+                    <asp:UpdatePanel ID="UpdatePanel6" runat="server" UpdateMode="Conditional">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers>                    
+                        <ContentTemplate>
+                            <asp:Label ID="lblPoptotal" runat="server" Text="Label"></asp:Label>                     
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div>                     
+                    <asp:Timer ID="Timer1" runat="server" ontick="Timer1_Tick" Interval="1000"></asp:Timer>
+                </div>
+            </div>
+            <div id="contentwrapper">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                <div id="bottom">
+                    
+                    <div style=" float:right; margin-right:5px; margin-top:4px;">
+                    <asp:UpdatePanel ID="UP1" runat="server">
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger  ControlID="Timer1" EventName="Tick" />
+                        </Triggers> 
+                        <ContentTemplate>
+                         <asp:Label runat="server" ID="lblTime" Font-Size="X-Small" ForeColor="#702604" Text=""></asp:Label>   
+                        </ContentTemplate>
+                    </asp:UpdatePanel>
+                    </div>
+                    <div style="float:right;  text-align:left; min-width:184px; margin-top:-1px;">
+                        <pl:pageload id="plPageLoad" runat="server"></pl:pageload>&nbsp;|&nbsp;
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div id="footer">
+        <div id="linkContainer">
+            <div id="footer_left">
+                <asp:LinkButton ID="LinkButton1" runat="server" Font-Underline="False" ForeColor="#702604" Font-Bold="True" Font-Size="Small">Yardım</asp:LinkButton>
+                &nbsp;-&nbsp; 
+                <asp:LinkButton ID="LinkButton2" runat="server" Font-Underline="False" ForeColor="#702604" Font-Bold="True" Font-Size="Small">Destek</asp:LinkButton>
+                &nbsp;-&nbsp;
+                <asp:LinkButton ID="LinkButton3" runat="server" Font-Underline="False" ForeColor="#702604" Font-Bold="True" Font-Size="Small">Arkadaşlar</asp:LinkButton>
+                &nbsp;-&nbsp;
+                <asp:LinkButton ID="LinkButton4" runat="server" Font-Underline="False" ForeColor="#702604" Font-Bold="True" Font-Size="Small">Arkadaşını Davet Et</asp:LinkButton>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>

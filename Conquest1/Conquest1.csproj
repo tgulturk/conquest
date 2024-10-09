@@ -1,0 +1,304 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6AEFBD9F-2D03-45DE-BB6B-C711FE70BB13}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Conquest1</RootNamespace>
+    <AssemblyName>Conquest1</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="AjaxControlToolkit.resources, Version=4.1.51116.0, Culture=tr-TR, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\AjaxControlToolkit.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="barracks.aspx" />
+    <Content Include="clay.aspx" />
+    <Content Include="commandcenter.aspx" />
+    <Content Include="content.css" />
+    <Content Include="default.aspx" />
+    <Content Include="farm.aspx" />
+    <Content Include="iron.aspx" />
+    <Content Include="login.css" />
+    <Content Include="main.aspx" />
+    <Content Include="map.aspx" />
+    <Content Include="market.aspx" />
+    <Content Include="messages.aspx" />
+    <Content Include="overview.aspx" />
+    <Content Include="palace.aspx" />
+    <Content Include="rankings.aspx" />
+    <Content Include="register.aspx" />
+    <Content Include="report.aspx" />
+    <Content Include="settings.aspx" />
+    <Content Include="smithy.aspx" />
+    <Content Include="stable.aspx" />
+    <Content Include="village.aspx" />
+    <Content Include="wall.aspx" />
+    <Content Include="warehouse.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="wood.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="barracks.aspx.cs">
+      <DependentUpon>barracks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="barracks.aspx.designer.cs">
+      <DependentUpon>barracks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="clay.aspx.cs">
+      <DependentUpon>clay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="clay.aspx.designer.cs">
+      <DependentUpon>clay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="commandcenter.aspx.cs">
+      <DependentUpon>commandcenter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="commandcenter.aspx.designer.cs">
+      <DependentUpon>commandcenter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DbConnection.cs" />
+    <Compile Include="default.aspx.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="default.aspx.designer.cs">
+      <DependentUpon>default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="farm.aspx.cs">
+      <DependentUpon>farm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="farm.aspx.designer.cs">
+      <DependentUpon>farm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="iron.aspx.cs">
+      <DependentUpon>iron.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="iron.aspx.designer.cs">
+      <DependentUpon>iron.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.Master.cs">
+      <DependentUpon>login.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.Master.designer.cs">
+      <DependentUpon>login.Master</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="map.aspx.cs">
+      <DependentUpon>map.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="map.aspx.designer.cs">
+      <DependentUpon>map.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="market.aspx.cs">
+      <DependentUpon>market.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="market.aspx.designer.cs">
+      <DependentUpon>market.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="messages.aspx.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="messages.aspx.designer.cs">
+      <DependentUpon>messages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="overview.aspx.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="overview.aspx.designer.cs">
+      <DependentUpon>overview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="palace.aspx.cs">
+      <DependentUpon>palace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="palace.aspx.designer.cs">
+      <DependentUpon>palace.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rankings.aspx.cs">
+      <DependentUpon>rankings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="rankings.aspx.designer.cs">
+      <DependentUpon>rankings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="register.aspx.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="register.aspx.designer.cs">
+      <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="report.aspx.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="report.aspx.designer.cs">
+      <DependentUpon>report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="smithy.aspx.cs">
+      <DependentUpon>smithy.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="smithy.aspx.designer.cs">
+      <DependentUpon>smithy.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stable.aspx.cs">
+      <DependentUpon>stable.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stable.aspx.designer.cs">
+      <DependentUpon>stable.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="village.aspx.cs">
+      <DependentUpon>village.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="village.aspx.designer.cs">
+      <DependentUpon>village.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="village.Master.cs">
+      <DependentUpon>village.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="village.Master.designer.cs">
+      <DependentUpon>village.Master</DependentUpon>
+    </Compile>
+    <Compile Include="wall.aspx.cs">
+      <DependentUpon>wall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wall.aspx.designer.cs">
+      <DependentUpon>wall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="warehouse.aspx.cs">
+      <DependentUpon>warehouse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="warehouse.aspx.designer.cs">
+      <DependentUpon>warehouse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="wood.aspx.cs">
+      <DependentUpon>wood.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="wood.aspx.designer.cs">
+      <DependentUpon>wood.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="login.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="village.Master" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>44894</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

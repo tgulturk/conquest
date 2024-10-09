@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConquestModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="ConquestEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Messages" EntityType="ConquestModel.Messages" />
+    <EntitySet Name="BuildingPoint" EntityType="ConquestModel.BuildingPoint" />
+    <EntitySet Name="BuildingRequirement" EntityType="ConquestModel.BuildingRequirement" />
+    <EntitySet Name="Buildings" EntityType="ConquestModel.Buildings" />
+    <EntitySet Name="BuildPrice" EntityType="ConquestModel.BuildPrice" />
+    <EntitySet Name="BuildTime" EntityType="ConquestModel.BuildTime" />
+    <EntitySet Name="Coordinates" EntityType="ConquestModel.Coordinates" />
+    <EntitySet Name="MarketMerchants" EntityType="ConquestModel.MarketMerchants" />
+    <EntitySet Name="Population" EntityType="ConquestModel.Population" />
+    <EntitySet Name="ResourceCapacity" EntityType="ConquestModel.ResourceCapacity" />
+    <EntitySet Name="ResourceIncrement" EntityType="ConquestModel.ResourceIncrement" />
+    <EntitySet Name="Resources" EntityType="ConquestModel.Resources" />
+    <EntitySet Name="sysdiagrams" EntityType="ConquestModel.sysdiagrams" />
+    <EntitySet Name="TimeReduce" EntityType="ConquestModel.TimeReduce" />
+    <EntitySet Name="UnitRequirement" EntityType="ConquestModel.UnitRequirement" />
+    <EntitySet Name="Units" EntityType="ConquestModel.Units" />
+    <EntitySet Name="Users" EntityType="ConquestModel.Users" />
+    <EntitySet Name="VillageBuildings" EntityType="ConquestModel.VillageBuildings" />
+    <EntitySet Name="VillageResources" EntityType="ConquestModel.VillageResources" />
+    <EntitySet Name="Villages" EntityType="ConquestModel.Villages" />
+    <EntitySet Name="VillageUnits" EntityType="ConquestModel.VillageUnits" />
+    <EntitySet Name="WallDefense" EntityType="ConquestModel.WallDefense" />
+    <EntitySet Name="BuildingPoints" EntityType="ConquestModel.BuildingPoints" />
+    <EntitySet Name="LoginLog" EntityType="ConquestModel.LoginLog" />
+    <EntitySet Name="News" EntityType="ConquestModel.News" />
+  </EntityContainer>
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="mID" />
+      <PropertyRef Name="senderID" />
+      <PropertyRef Name="getterID" />
+    </Key>
+    <Property Name="mID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="senderID" Type="Int32" Nullable="false" />
+    <Property Name="getterID" Type="Int32" Nullable="false" />
+    <Property Name="subject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="message" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="senddate" Type="DateTime" />
+    <Property Name="issenddelete" Type="Int32" />
+    <Property Name="isgetdelete" Type="Int32" />
+    <Property Name="isread" Type="Int32" />
+    <Property Name="ispermdelete" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BuildingPoint">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="C1" Type="Int32" />
+    <Property Name="C2" Type="Int32" />
+    <Property Name="C3" Type="Int32" />
+    <Property Name="C4" Type="Int32" />
+    <Property Name="C5" Type="Int32" />
+    <Property Name="C6" Type="Int32" />
+    <Property Name="C7" Type="Int32" />
+    <Property Name="C8" Type="Int32" />
+    <Property Name="C9" Type="Int32" />
+    <Property Name="C10" Type="Int32" />
+    <Property Name="C11" Type="Int32" />
+    <Property Name="C12" Type="Int32" />
+    <Property Name="C13" Type="Int32" />
+    <Property Name="C14" Type="Int32" />
+    <Property Name="C15" Type="Int32" />
+    <Property Name="C16" Type="Int32" />
+    <Property Name="C17" Type="Int32" />
+    <Property Name="C18" Type="Int32" />
+    <Property Name="C19" Type="Int32" />
+    <Property Name="C20" Type="Int32" />
+    <Property Name="C21" Type="Int32" />
+    <Property Name="C22" Type="Int32" />
+    <Property Name="C23" Type="Int32" />
+    <Property Name="C24" Type="Int32" />
+    <Property Name="C25" Type="Int32" />
+    <Property Name="C26" Type="Int32" />
+    <Property Name="C27" Type="Int32" />
+    <Property Name="C28" Type="Int32" />
+    <Property Name="C29" Type="Int32" />
+    <Property Name="C30" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BuildingRequirement">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="RequireID" />
+      <PropertyRef Name="RequireLevel" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="RequireID" Type="Int32" Nullable="false" />
+    <Property Name="RequireLevel" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Buildings">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bName" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="bName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="BuildPrice">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="rID" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="rID" Type="Int32" Nullable="false" />
+    <Property Name="C1" Type="Int32" />
+    <Property Name="C2" Type="Int32" />
+    <Property Name="C3" Type="Int32" />
+    <Property Name="C4" Type="Int32" />
+    <Property Name="C5" Type="Int32" />
+    <Property Name="C6" Type="Int32" />
+    <Property Name="C7" Type="Int32" />
+    <Property Name="C8" Type="Int32" />
+    <Property Name="C9" Type="Int32" />
+    <Property Name="C10" Type="Int32" />
+    <Property Name="C11" Type="Int32" />
+    <Property Name="C12" Type="Int32" />
+    <Property Name="C13" Type="Int32" />
+    <Property Name="C14" Type="Int32" />
+    <Property Name="C15" Type="Int32" />
+    <Property Name="C16" Type="Int32" />
+    <Property Name="C17" Type="Int32" />
+    <Property Name="C18" Type="Int32" />
+    <Property Name="C19" Type="Int32" />
+    <Property Name="C20" Type="Int32" />
+    <Property Name="C21" Type="Int32" />
+    <Property Name="C22" Type="Int32" />
+    <Property Name="C23" Type="Int32" />
+    <Property Name="C24" Type="Int32" />
+    <Property Name="C25" Type="Int32" />
+    <Property Name="C26" Type="Int32" />
+    <Property Name="C27" Type="Int32" />
+    <Property Name="C28" Type="Int32" />
+    <Property Name="C29" Type="Int32" />
+    <Property Name="C30" Type="Int32" />
+  </EntityType>
+  <EntityType Name="BuildTime">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="C1" Type="Int32" />
+    <Property Name="C2" Type="Int32" />
+    <Property Name="C3" Type="Int32" />
+    <Property Name="C4" Type="Int32" />
+    <Property Name="C5" Type="Int32" />
+    <Property Name="C6" Type="Int32" />
+    <Property Name="C7" Type="Int32" />
+    <Property Name="C8" Type="Int32" />
+    <Property Name="C9" Type="Int32" />
+    <Property Name="C10" Type="Int32" />
+    <Property Name="C11" Type="Int32" />
+    <Property Name="C12" Type="Int32" />
+    <Property Name="C13" Type="Int32" />
+    <Property Name="C14" Type="Int32" />
+    <Property Name="C15" Type="Int32" />
+    <Property Name="C16" Type="Int32" />
+    <Property Name="C17" Type="Int32" />
+    <Property Name="C18" Type="Int32" />
+    <Property Name="C19" Type="Int32" />
+    <Property Name="C20" Type="Int32" />
+    <Property Name="C21" Type="Int32" />
+    <Property Name="C22" Type="Int32" />
+    <Property Name="C23" Type="Int32" />
+    <Property Name="C24" Type="Int32" />
+    <Property Name="C25" Type="Int32" />
+    <Property Name="C26" Type="Int32" />
+    <Property Name="C27" Type="Int32" />
+    <Property Name="C28" Type="Int32" />
+    <Property Name="C29" Type="Int32" />
+    <Property Name="C30" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Coordinates">
+    <Key>
+      <PropertyRef Name="cID" />
+    </Key>
+    <Property Name="cID" Type="Int32" Nullable="false" />
+    <Property Name="vX" Type="Int32" />
+    <Property Name="vY" Type="Int32" />
+  </EntityType>
+  <EntityType Name="MarketMerchants">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Merchants" />
+    </Key>
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="Merchants" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Population">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Population1" />
+    </Key>
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="Population1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResourceCapacity">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Capacity" />
+    </Key>
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="Capacity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResourceIncrement">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Increment" />
+    </Key>
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="Increment" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="rID" />
+      <PropertyRef Name="rName" />
+    </Key>
+    <Property Name="rID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="principal_id" />
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TimeReduce">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="TimeReduce1" />
+    </Key>
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="TimeReduce1" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UnitRequirement">
+    <Key>
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+    </Key>
+    <Property Name="uID" Type="Int32" Nullable="false" />
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Units">
+    <Key>
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="uName" />
+      <PropertyRef Name="u1price" />
+      <PropertyRef Name="u2price" />
+      <PropertyRef Name="u3price" />
+      <PropertyRef Name="uPopulation" />
+      <PropertyRef Name="uAttack" />
+      <PropertyRef Name="uGDefense" />
+      <PropertyRef Name="uCDefense" />
+      <PropertyRef Name="uSpeed" />
+      <PropertyRef Name="uCarry" />
+      <PropertyRef Name="uTime" />
+    </Key>
+    <Property Name="uID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="u1price" Type="Int32" Nullable="false" />
+    <Property Name="u2price" Type="Int32" Nullable="false" />
+    <Property Name="u3price" Type="Int32" Nullable="false" />
+    <Property Name="uPopulation" Type="Int32" Nullable="false" />
+    <Property Name="uAttack" Type="Int32" Nullable="false" />
+    <Property Name="uGDefense" Type="Int32" Nullable="false" />
+    <Property Name="uCDefense" Type="Int32" Nullable="false" />
+    <Property Name="uSpeed" Type="Int32" Nullable="false" />
+    <Property Name="uCarry" Type="Int32" Nullable="false" />
+    <Property Name="uTime" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="userName" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="userType" />
+      <PropertyRef Name="userMail" />
+    </Key>
+    <Property Name="userID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="userType" Type="Int16" Nullable="false" />
+    <Property Name="userMail" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="VillageBuildings">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+    </Key>
+    <Property Name="vID" Type="Int32" Nullable="false" />
+    <Property Name="bID" Type="Int32" Nullable="false" />
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VillageResources">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="rID" />
+      <PropertyRef Name="rCount" />
+    </Key>
+    <Property Name="vID" Type="Int32" Nullable="false" />
+    <Property Name="rID" Type="Int32" Nullable="false" />
+    <Property Name="rCount" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Villages">
+    <Key>
+      <PropertyRef Name="vID" />
+    </Key>
+    <Property Name="vID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="uID" Type="Int32" Nullable="false" />
+    <Property Name="vName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="vPoint" Type="Int32" Nullable="false" />
+    <Property Name="vX" Type="Int32" Nullable="false" />
+    <Property Name="vY" Type="Int32" Nullable="false" />
+    <Property Name="vPopulation" Type="Int32" Nullable="false" />
+    <Property Name="Loyalty" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VillageUnits">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="uCount" />
+    </Key>
+    <Property Name="vID" Type="Int32" Nullable="false" />
+    <Property Name="uID" Type="Int32" Nullable="false" />
+    <Property Name="uCount" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WallDefense">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="wDefense" />
+    </Key>
+    <Property Name="bLevel" Type="Int32" Nullable="false" />
+    <Property Name="wDefense" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BuildingPoints">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Type="Int32" Name="bID" Nullable="false" />
+    <Property Type="Int32" Name="bLevel" />
+    <Property Type="Int32" Name="Point" />
+  </EntityType>
+  <EntityType Name="LoginLog">
+    <Key>
+      <PropertyRef Name="uID" />
+    </Key>
+    <Property Type="Int32" Name="uID" Nullable="false" />
+    <Property Type="String" Name="ipAdress" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="loginDate" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Type="Int32" Name="newsID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="newsDate" />
+    <Property Type="String" Name="news1" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

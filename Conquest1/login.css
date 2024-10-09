@@ -1,0 +1,147 @@
+﻿* {
+margin: 0;
+    font-size: medium;
+    font-family: "Old English Text MT";
+}
+
+html, body {
+    height: 100%;
+    font-size:13px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body 
+{
+    background-color:Black;
+}
+
+.kapsul {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;   
+
+}
+
+#icerik
+{
+    float:left;
+    clear:both;
+    margin-bottom:0;
+    width:1024px;
+    height:628px;
+    background-image: url(images/bg.jpg);
+    background-repeat: no-repeat;
+}
+
+#orta
+{
+    background-image : url(images/papirus.png);
+    background-repeat : no-repeat;
+    height: 450px;
+    width: 700px;
+    margin: 11em 0 0 27em;
+}
+
+#rightrepeater
+{
+    margin: 0 0 0 12.2em;
+    height:628px;
+    width:85.7%;
+    background-image: url(images/repeater.jpg);
+    background-repeat:repeat-x;
+}
+
+#leftcontent
+{
+    
+    padding-left: 4%;
+    padding-top:5%;
+    margin-left:10%; 
+    margin-right:3%;
+    width:40%;
+    float:left;
+    height:49%;
+    
+    }
+    
+#rightcontent
+{
+    
+    padding: 6em 0 0 0;
+    width:38%;
+    float:right;
+    height:40%;
+    }
+
+#news
+{
+    padding-top:1%;
+    margin-left:12%;
+    width:72%;
+    height:20%;
+    }
+    
+#newsli
+{
+    width:100%;
+    height:70px;
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: auto;
+    }
+    
+#spear
+{
+    margin-top:8%;
+    width:5%;
+    height:49%;
+    float:left;
+    background-image: url(images/spear.png);
+    background-repeat: no-repeat;
+    }
+    
+#grass
+{
+    clear:both;
+    margin-left:9.49%;
+    width:76%;
+    height:2%;
+    background-image: url(images/grass.png);
+    }
+
+#registercontent
+{
+    margin: 2em 0 0 3.5em;
+    padding-left:1em;
+    padding-top:3em;
+    height:70%;
+    width:65%;
+    font-family: "Old English Text MT";
+    font-size: x-large;
+}
+
+.Panel_Modal
+{ background-color:Black;
+  width: 300px;
+ filter:alpha(opacity=80);
+ opacity:0.8;
+ }
+
+.popupphoto{
+  position:absolute;
+  top:0%;
+  left:0%;
+  border:7px solid #ccc;
+  border-left:600px solid rgba(0,0,0, 0.5);
+  border-bottom:250px solid rgba(0,0,0, 0.5);
+  border-top:300px solid rgba(0,0,0, 0.5);
+  border-right:425px solid rgba(0,0,0, 0.5);
+  text-align:center;
+  font-size:12px;
+  background-color:#D9B989;
+  width:25%;
+  height:50px;
+  padding:5px 0;
+  z-index:100;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding;
+}

@@ -1,0 +1,5 @@
+c:\users\karakkof\documents\visual studio 2010\Projects\Conquest1\Conquest1\bin\Conquest1.dll
+c:\users\karakkof\documents\visual studio 2010\Projects\Conquest1\Conquest1\bin\Conquest1.pdb
+c:\users\karakkof\documents\visual studio 2010\Projects\Conquest1\Conquest1\obj\Debug\Conquest1.dll
+c:\users\karakkof\documents\visual studio 2010\Projects\Conquest1\Conquest1\obj\Debug\Conquest1.pdb
+C:\Users\Karakkof\documents\visual studio 2010\Projects\Conquest1\Conquest1\obj\Debug\Conquest1.csprojResolveAssemblyReference.cache

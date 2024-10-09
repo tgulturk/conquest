@@ -1,0 +1,711 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConquestModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ConquestModelStoreContainer">
+    <EntitySet Name="BuildingPoints" EntityType="ConquestModel.Store.BuildingPoints" store:Type="Tables" store:Schema="conquest" store:Name="BuildingPoints">
+      <DefiningQuery>SELECT 
+      [BuildingPoints].[bID] AS [bID], 
+      [BuildingPoints].[bLevel] AS [bLevel], 
+      [BuildingPoints].[Point] AS [Point]
+      FROM [conquest].[BuildingPoints] AS [BuildingPoints]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Messages" EntityType="ConquestModel.Store.Messages" store:Type="Tables" store:Schema="conquest" store:Name="Messages">
+      <DefiningQuery>SELECT 
+      [Messages].[mID] AS [mID], 
+      [Messages].[senderID] AS [senderID], 
+      [Messages].[getterID] AS [getterID], 
+      [Messages].[subject] AS [subject], 
+      [Messages].[message] AS [message], 
+      [Messages].[senddate] AS [senddate], 
+      [Messages].[issenddelete] AS [issenddelete], 
+      [Messages].[isgetdelete] AS [isgetdelete], 
+      [Messages].[isread] AS [isread], 
+      [Messages].[ispermdelete] AS [ispermdelete]
+      FROM [conquest].[Messages] AS [Messages]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BuildingPoint" EntityType="ConquestModel.Store.BuildingPoint" store:Type="Tables" store:Schema="dbo" store:Name="BuildingPoint">
+      <DefiningQuery>SELECT 
+      [BuildingPoint].[bID] AS [bID], 
+      [BuildingPoint].[1] AS [1], 
+      [BuildingPoint].[2] AS [2], 
+      [BuildingPoint].[3] AS [3], 
+      [BuildingPoint].[4] AS [4], 
+      [BuildingPoint].[5] AS [5], 
+      [BuildingPoint].[6] AS [6], 
+      [BuildingPoint].[7] AS [7], 
+      [BuildingPoint].[8] AS [8], 
+      [BuildingPoint].[9] AS [9], 
+      [BuildingPoint].[10] AS [10], 
+      [BuildingPoint].[11] AS [11], 
+      [BuildingPoint].[12] AS [12], 
+      [BuildingPoint].[13] AS [13], 
+      [BuildingPoint].[14] AS [14], 
+      [BuildingPoint].[15] AS [15], 
+      [BuildingPoint].[16] AS [16], 
+      [BuildingPoint].[17] AS [17], 
+      [BuildingPoint].[18] AS [18], 
+      [BuildingPoint].[19] AS [19], 
+      [BuildingPoint].[20] AS [20], 
+      [BuildingPoint].[21] AS [21], 
+      [BuildingPoint].[22] AS [22], 
+      [BuildingPoint].[23] AS [23], 
+      [BuildingPoint].[24] AS [24], 
+      [BuildingPoint].[25] AS [25], 
+      [BuildingPoint].[26] AS [26], 
+      [BuildingPoint].[27] AS [27], 
+      [BuildingPoint].[28] AS [28], 
+      [BuildingPoint].[29] AS [29], 
+      [BuildingPoint].[30] AS [30]
+      FROM [dbo].[BuildingPoint] AS [BuildingPoint]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BuildingRequirement" EntityType="ConquestModel.Store.BuildingRequirement" store:Type="Tables" store:Schema="dbo" store:Name="BuildingRequirement">
+      <DefiningQuery>SELECT 
+      [BuildingRequirement].[bID] AS [bID], 
+      [BuildingRequirement].[RequireID] AS [RequireID], 
+      [BuildingRequirement].[RequireLevel] AS [RequireLevel]
+      FROM [dbo].[BuildingRequirement] AS [BuildingRequirement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Buildings" EntityType="ConquestModel.Store.Buildings" store:Type="Tables" store:Schema="dbo" store:Name="Buildings">
+      <DefiningQuery>SELECT 
+      [Buildings].[bID] AS [bID], 
+      [Buildings].[bName] AS [bName]
+      FROM [dbo].[Buildings] AS [Buildings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BuildPrice" EntityType="ConquestModel.Store.BuildPrice" store:Type="Tables" store:Schema="dbo" store:Name="BuildPrice">
+      <DefiningQuery>SELECT 
+      [BuildPrice].[bID] AS [bID], 
+      [BuildPrice].[rID] AS [rID], 
+      [BuildPrice].[1] AS [1], 
+      [BuildPrice].[2] AS [2], 
+      [BuildPrice].[3] AS [3], 
+      [BuildPrice].[4] AS [4], 
+      [BuildPrice].[5] AS [5], 
+      [BuildPrice].[6] AS [6], 
+      [BuildPrice].[7] AS [7], 
+      [BuildPrice].[8] AS [8], 
+      [BuildPrice].[9] AS [9], 
+      [BuildPrice].[10] AS [10], 
+      [BuildPrice].[11] AS [11], 
+      [BuildPrice].[12] AS [12], 
+      [BuildPrice].[13] AS [13], 
+      [BuildPrice].[14] AS [14], 
+      [BuildPrice].[15] AS [15], 
+      [BuildPrice].[16] AS [16], 
+      [BuildPrice].[17] AS [17], 
+      [BuildPrice].[18] AS [18], 
+      [BuildPrice].[19] AS [19], 
+      [BuildPrice].[20] AS [20], 
+      [BuildPrice].[21] AS [21], 
+      [BuildPrice].[22] AS [22], 
+      [BuildPrice].[23] AS [23], 
+      [BuildPrice].[24] AS [24], 
+      [BuildPrice].[25] AS [25], 
+      [BuildPrice].[26] AS [26], 
+      [BuildPrice].[27] AS [27], 
+      [BuildPrice].[28] AS [28], 
+      [BuildPrice].[29] AS [29], 
+      [BuildPrice].[30] AS [30]
+      FROM [dbo].[BuildPrice] AS [BuildPrice]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BuildTime" EntityType="ConquestModel.Store.BuildTime" store:Type="Tables" store:Schema="dbo" store:Name="BuildTime">
+      <DefiningQuery>SELECT 
+      [BuildTime].[bID] AS [bID], 
+      [BuildTime].[1] AS [1], 
+      [BuildTime].[2] AS [2], 
+      [BuildTime].[3] AS [3], 
+      [BuildTime].[4] AS [4], 
+      [BuildTime].[5] AS [5], 
+      [BuildTime].[6] AS [6], 
+      [BuildTime].[7] AS [7], 
+      [BuildTime].[8] AS [8], 
+      [BuildTime].[9] AS [9], 
+      [BuildTime].[10] AS [10], 
+      [BuildTime].[11] AS [11], 
+      [BuildTime].[12] AS [12], 
+      [BuildTime].[13] AS [13], 
+      [BuildTime].[14] AS [14], 
+      [BuildTime].[15] AS [15], 
+      [BuildTime].[16] AS [16], 
+      [BuildTime].[17] AS [17], 
+      [BuildTime].[18] AS [18], 
+      [BuildTime].[19] AS [19], 
+      [BuildTime].[20] AS [20], 
+      [BuildTime].[21] AS [21], 
+      [BuildTime].[22] AS [22], 
+      [BuildTime].[23] AS [23], 
+      [BuildTime].[24] AS [24], 
+      [BuildTime].[25] AS [25], 
+      [BuildTime].[26] AS [26], 
+      [BuildTime].[27] AS [27], 
+      [BuildTime].[28] AS [28], 
+      [BuildTime].[29] AS [29], 
+      [BuildTime].[30] AS [30]
+      FROM [dbo].[BuildTime] AS [BuildTime]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Coordinates" EntityType="ConquestModel.Store.Coordinates" store:Type="Tables" store:Schema="dbo" store:Name="Coordinates">
+      <DefiningQuery>SELECT 
+      [Coordinates].[cID] AS [cID], 
+      [Coordinates].[vX] AS [vX], 
+      [Coordinates].[vY] AS [vY]
+      FROM [dbo].[Coordinates] AS [Coordinates]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="LoginLog" EntityType="ConquestModel.Store.LoginLog" store:Type="Tables" store:Schema="dbo" store:Name="LoginLog">
+      <DefiningQuery>SELECT 
+      [LoginLog].[uID] AS [uID], 
+      [LoginLog].[ipAdress] AS [ipAdress], 
+      [LoginLog].[loginDate] AS [loginDate]
+      FROM [dbo].[LoginLog] AS [LoginLog]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MarketMerchants" EntityType="ConquestModel.Store.MarketMerchants" store:Type="Tables" store:Schema="dbo" store:Name="MarketMerchants">
+      <DefiningQuery>SELECT 
+      [MarketMerchants].[bLevel] AS [bLevel], 
+      [MarketMerchants].[Merchants] AS [Merchants]
+      FROM [dbo].[MarketMerchants] AS [MarketMerchants]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="News" EntityType="ConquestModel.Store.News" store:Type="Tables" store:Schema="dbo" store:Name="News">
+      <DefiningQuery>SELECT 
+      [News].[newsID] AS [newsID], 
+      [News].[newsDate] AS [newsDate], 
+      [News].[news] AS [news]
+      FROM [dbo].[News] AS [News]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Population" EntityType="ConquestModel.Store.Population" store:Type="Tables" store:Schema="dbo" store:Name="Population">
+      <DefiningQuery>SELECT 
+      [Population].[bLevel] AS [bLevel], 
+      [Population].[Population] AS [Population]
+      FROM [dbo].[Population] AS [Population]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ResourceCapacity" EntityType="ConquestModel.Store.ResourceCapacity" store:Type="Tables" store:Schema="dbo" store:Name="ResourceCapacity">
+      <DefiningQuery>SELECT 
+      [ResourceCapacity].[bLevel] AS [bLevel], 
+      [ResourceCapacity].[Capacity] AS [Capacity]
+      FROM [dbo].[ResourceCapacity] AS [ResourceCapacity]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ResourceIncrement" EntityType="ConquestModel.Store.ResourceIncrement" store:Type="Tables" store:Schema="dbo" store:Name="ResourceIncrement">
+      <DefiningQuery>SELECT 
+      [ResourceIncrement].[bLevel] AS [bLevel], 
+      [ResourceIncrement].[Increment] AS [Increment]
+      FROM [dbo].[ResourceIncrement] AS [ResourceIncrement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Resources" EntityType="ConquestModel.Store.Resources" store:Type="Tables" store:Schema="dbo" store:Name="Resources">
+      <DefiningQuery>SELECT 
+      [Resources].[rID] AS [rID], 
+      [Resources].[rName] AS [rName]
+      FROM [dbo].[Resources] AS [Resources]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="sysdiagrams" EntityType="ConquestModel.Store.sysdiagrams" store:Type="Tables" store:Schema="dbo" store:Name="sysdiagrams">
+      <DefiningQuery>SELECT 
+      [sysdiagrams].[name] AS [name], 
+      [sysdiagrams].[principal_id] AS [principal_id], 
+      [sysdiagrams].[diagram_id] AS [diagram_id], 
+      [sysdiagrams].[version] AS [version], 
+      [sysdiagrams].[definition] AS [definition]
+      FROM [dbo].[sysdiagrams] AS [sysdiagrams]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TimeReduce" EntityType="ConquestModel.Store.TimeReduce" store:Type="Tables" store:Schema="dbo" store:Name="TimeReduce">
+      <DefiningQuery>SELECT 
+      [TimeReduce].[bID] AS [bID], 
+      [TimeReduce].[bLevel] AS [bLevel], 
+      [TimeReduce].[TimeReduce] AS [TimeReduce]
+      FROM [dbo].[TimeReduce] AS [TimeReduce]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UnitRequirement" EntityType="ConquestModel.Store.UnitRequirement" store:Type="Tables" store:Schema="dbo" store:Name="UnitRequirement">
+      <DefiningQuery>SELECT 
+      [UnitRequirement].[uID] AS [uID], 
+      [UnitRequirement].[bID] AS [bID], 
+      [UnitRequirement].[bLevel] AS [bLevel]
+      FROM [dbo].[UnitRequirement] AS [UnitRequirement]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Units" EntityType="ConquestModel.Store.Units" store:Type="Tables" store:Schema="dbo" store:Name="Units">
+      <DefiningQuery>SELECT 
+      [Units].[uID] AS [uID], 
+      [Units].[uName] AS [uName], 
+      [Units].[u1price] AS [u1price], 
+      [Units].[u2price] AS [u2price], 
+      [Units].[u3price] AS [u3price], 
+      [Units].[uPopulation] AS [uPopulation], 
+      [Units].[uAttack] AS [uAttack], 
+      [Units].[uGDefense] AS [uGDefense], 
+      [Units].[uCDefense] AS [uCDefense], 
+      [Units].[uSpeed] AS [uSpeed], 
+      [Units].[uCarry] AS [uCarry], 
+      [Units].[uTime] AS [uTime]
+      FROM [dbo].[Units] AS [Units]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Users" EntityType="ConquestModel.Store.Users" store:Type="Tables" store:Schema="dbo" store:Name="Users">
+      <DefiningQuery>SELECT 
+      [Users].[userID] AS [userID], 
+      [Users].[userName] AS [userName], 
+      [Users].[password] AS [password], 
+      [Users].[userType] AS [userType], 
+      [Users].[userMail] AS [userMail]
+      FROM [dbo].[Users] AS [Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VillageBuildings" EntityType="ConquestModel.Store.VillageBuildings" store:Type="Tables" store:Schema="dbo" store:Name="VillageBuildings">
+      <DefiningQuery>SELECT 
+      [VillageBuildings].[vID] AS [vID], 
+      [VillageBuildings].[bID] AS [bID], 
+      [VillageBuildings].[bLevel] AS [bLevel]
+      FROM [dbo].[VillageBuildings] AS [VillageBuildings]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VillageResources" EntityType="ConquestModel.Store.VillageResources" store:Type="Tables" store:Schema="dbo" store:Name="VillageResources">
+      <DefiningQuery>SELECT 
+      [VillageResources].[vID] AS [vID], 
+      [VillageResources].[rID] AS [rID], 
+      [VillageResources].[rCount] AS [rCount]
+      FROM [dbo].[VillageResources] AS [VillageResources]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Villages" EntityType="ConquestModel.Store.Villages" store:Type="Tables" store:Schema="dbo" store:Name="Villages">
+      <DefiningQuery>SELECT 
+      [Villages].[vID] AS [vID], 
+      [Villages].[uID] AS [uID], 
+      [Villages].[vName] AS [vName], 
+      [Villages].[vPoint] AS [vPoint], 
+      [Villages].[vX] AS [vX], 
+      [Villages].[vY] AS [vY], 
+      [Villages].[vPopulation] AS [vPopulation], 
+      [Villages].[Loyalty] AS [Loyalty]
+      FROM [dbo].[Villages] AS [Villages]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VillageUnits" EntityType="ConquestModel.Store.VillageUnits" store:Type="Tables" store:Schema="dbo" store:Name="VillageUnits">
+      <DefiningQuery>SELECT 
+      [VillageUnits].[vID] AS [vID], 
+      [VillageUnits].[uID] AS [uID], 
+      [VillageUnits].[uCount] AS [uCount]
+      FROM [dbo].[VillageUnits] AS [VillageUnits]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="WallDefense" EntityType="ConquestModel.Store.WallDefense" store:Type="Tables" store:Schema="dbo" store:Name="WallDefense">
+      <DefiningQuery>SELECT 
+      [WallDefense].[bLevel] AS [bLevel], 
+      [WallDefense].[wDefense] AS [wDefense]
+      FROM [dbo].[WallDefense] AS [WallDefense]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.conquest.BuildingPoints' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BuildingPoints">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="bLevel" Type="int" />
+    <Property Name="Point" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.conquest.Messages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Messages">
+    <Key>
+      <PropertyRef Name="mID" />
+      <PropertyRef Name="senderID" />
+      <PropertyRef Name="getterID" />
+    </Key>
+    <Property Name="mID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="senderID" Type="int" Nullable="false" />
+    <Property Name="getterID" Type="int" Nullable="false" />
+    <Property Name="subject" Type="nvarchar" MaxLength="50" />
+    <Property Name="message" Type="varchar(max)" />
+    <Property Name="senddate" Type="datetime" />
+    <Property Name="issenddelete" Type="int" />
+    <Property Name="isgetdelete" Type="int" />
+    <Property Name="isread" Type="int" />
+    <Property Name="ispermdelete" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.BuildingPoint' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BuildingPoint">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="1" Type="int" />
+    <Property Name="2" Type="int" />
+    <Property Name="3" Type="int" />
+    <Property Name="4" Type="int" />
+    <Property Name="5" Type="int" />
+    <Property Name="6" Type="int" />
+    <Property Name="7" Type="int" />
+    <Property Name="8" Type="int" />
+    <Property Name="9" Type="int" />
+    <Property Name="10" Type="int" />
+    <Property Name="11" Type="int" />
+    <Property Name="12" Type="int" />
+    <Property Name="13" Type="int" />
+    <Property Name="14" Type="int" />
+    <Property Name="15" Type="int" />
+    <Property Name="16" Type="int" />
+    <Property Name="17" Type="int" />
+    <Property Name="18" Type="int" />
+    <Property Name="19" Type="int" />
+    <Property Name="20" Type="int" />
+    <Property Name="21" Type="int" />
+    <Property Name="22" Type="int" />
+    <Property Name="23" Type="int" />
+    <Property Name="24" Type="int" />
+    <Property Name="25" Type="int" />
+    <Property Name="26" Type="int" />
+    <Property Name="27" Type="int" />
+    <Property Name="28" Type="int" />
+    <Property Name="29" Type="int" />
+    <Property Name="30" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.BuildingRequirement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BuildingRequirement">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="RequireID" />
+      <PropertyRef Name="RequireLevel" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="RequireID" Type="int" Nullable="false" />
+    <Property Name="RequireLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Buildings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Buildings">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bName" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="bName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.BuildPrice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BuildPrice">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="rID" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="rID" Type="int" Nullable="false" />
+    <Property Name="1" Type="int" />
+    <Property Name="2" Type="int" />
+    <Property Name="3" Type="int" />
+    <Property Name="4" Type="int" />
+    <Property Name="5" Type="int" />
+    <Property Name="6" Type="int" />
+    <Property Name="7" Type="int" />
+    <Property Name="8" Type="int" />
+    <Property Name="9" Type="int" />
+    <Property Name="10" Type="int" />
+    <Property Name="11" Type="int" />
+    <Property Name="12" Type="int" />
+    <Property Name="13" Type="int" />
+    <Property Name="14" Type="int" />
+    <Property Name="15" Type="int" />
+    <Property Name="16" Type="int" />
+    <Property Name="17" Type="int" />
+    <Property Name="18" Type="int" />
+    <Property Name="19" Type="int" />
+    <Property Name="20" Type="int" />
+    <Property Name="21" Type="int" />
+    <Property Name="22" Type="int" />
+    <Property Name="23" Type="int" />
+    <Property Name="24" Type="int" />
+    <Property Name="25" Type="int" />
+    <Property Name="26" Type="int" />
+    <Property Name="27" Type="int" />
+    <Property Name="28" Type="int" />
+    <Property Name="29" Type="int" />
+    <Property Name="30" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.BuildTime' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="BuildTime">
+    <Key>
+      <PropertyRef Name="bID" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="1" Type="int" />
+    <Property Name="2" Type="int" />
+    <Property Name="3" Type="int" />
+    <Property Name="4" Type="int" />
+    <Property Name="5" Type="int" />
+    <Property Name="6" Type="int" />
+    <Property Name="7" Type="int" />
+    <Property Name="8" Type="int" />
+    <Property Name="9" Type="int" />
+    <Property Name="10" Type="int" />
+    <Property Name="11" Type="int" />
+    <Property Name="12" Type="int" />
+    <Property Name="13" Type="int" />
+    <Property Name="14" Type="int" />
+    <Property Name="15" Type="int" />
+    <Property Name="16" Type="int" />
+    <Property Name="17" Type="int" />
+    <Property Name="18" Type="int" />
+    <Property Name="19" Type="int" />
+    <Property Name="20" Type="int" />
+    <Property Name="21" Type="int" />
+    <Property Name="22" Type="int" />
+    <Property Name="23" Type="int" />
+    <Property Name="24" Type="int" />
+    <Property Name="25" Type="int" />
+    <Property Name="26" Type="int" />
+    <Property Name="27" Type="int" />
+    <Property Name="28" Type="int" />
+    <Property Name="29" Type="int" />
+    <Property Name="30" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Coordinates' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Coordinates">
+    <Key>
+      <PropertyRef Name="cID" />
+    </Key>
+    <Property Name="cID" Type="int" Nullable="false" />
+    <Property Name="vX" Type="int" />
+    <Property Name="vY" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.LoginLog' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="LoginLog">
+    <Key>
+      <PropertyRef Name="uID" />
+    </Key>
+    <Property Name="uID" Type="int" Nullable="false" />
+    <Property Name="ipAdress" Type="nvarchar" MaxLength="50" />
+    <Property Name="loginDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.MarketMerchants' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="MarketMerchants">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Merchants" />
+    </Key>
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="Merchants" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.News' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="newsID" />
+    </Key>
+    <Property Name="newsID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="newsDate" Type="date" />
+    <Property Name="news" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Population' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Population">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Population" />
+    </Key>
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="Population" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.ResourceCapacity' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ResourceCapacity">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Capacity" />
+    </Key>
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="Capacity" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.ResourceIncrement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="ResourceIncrement">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="Increment" />
+    </Key>
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="Increment" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Resources' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Resources">
+    <Key>
+      <PropertyRef Name="rID" />
+      <PropertyRef Name="rName" />
+    </Key>
+    <Property Name="rID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="rName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.sysdiagrams' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="name" />
+      <PropertyRef Name="principal_id" />
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.TimeReduce' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="TimeReduce">
+    <Key>
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="TimeReduce" />
+    </Key>
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="TimeReduce" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.UnitRequirement' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="UnitRequirement">
+    <Key>
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+    </Key>
+    <Property Name="uID" Type="int" Nullable="false" />
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="bLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Units' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Units">
+    <Key>
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="uName" />
+      <PropertyRef Name="u1price" />
+      <PropertyRef Name="u2price" />
+      <PropertyRef Name="u3price" />
+      <PropertyRef Name="uPopulation" />
+      <PropertyRef Name="uAttack" />
+      <PropertyRef Name="uGDefense" />
+      <PropertyRef Name="uCDefense" />
+      <PropertyRef Name="uSpeed" />
+      <PropertyRef Name="uCarry" />
+      <PropertyRef Name="uTime" />
+    </Key>
+    <Property Name="uID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="uName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="u1price" Type="int" Nullable="false" />
+    <Property Name="u2price" Type="int" Nullable="false" />
+    <Property Name="u3price" Type="int" Nullable="false" />
+    <Property Name="uPopulation" Type="int" Nullable="false" />
+    <Property Name="uAttack" Type="int" Nullable="false" />
+    <Property Name="uGDefense" Type="int" Nullable="false" />
+    <Property Name="uCDefense" Type="int" Nullable="false" />
+    <Property Name="uSpeed" Type="int" Nullable="false" />
+    <Property Name="uCarry" Type="int" Nullable="false" />
+    <Property Name="uTime" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="userID" />
+      <PropertyRef Name="userName" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="userType" />
+      <PropertyRef Name="userMail" />
+    </Key>
+    <Property Name="userID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="password" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="userType" Type="smallint" Nullable="false" />
+    <Property Name="userMail" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.VillageBuildings' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="VillageBuildings">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="bID" />
+      <PropertyRef Name="bLevel" />
+    </Key>
+    <Property Name="vID" Type="int" Nullable="false" />
+    <Property Name="bID" Type="int" Nullable="false" />
+    <Property Name="bLevel" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.VillageResources' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="VillageResources">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="rID" />
+      <PropertyRef Name="rCount" />
+    </Key>
+    <Property Name="vID" Type="int" Nullable="false" />
+    <Property Name="rID" Type="int" Nullable="false" />
+    <Property Name="rCount" Type="float" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.Villages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="Villages">
+    <Key>
+      <PropertyRef Name="vID" />
+    </Key>
+    <Property Name="vID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="uID" Type="int" Nullable="false" />
+    <Property Name="vName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="vPoint" Type="int" Nullable="false" />
+    <Property Name="vX" Type="int" Nullable="false" />
+    <Property Name="vY" Type="int" Nullable="false" />
+    <Property Name="vPopulation" Type="int" Nullable="false" />
+    <Property Name="Loyalty" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.VillageUnits' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="VillageUnits">
+    <Key>
+      <PropertyRef Name="vID" />
+      <PropertyRef Name="uID" />
+      <PropertyRef Name="uCount" />
+    </Key>
+    <Property Name="vID" Type="int" Nullable="false" />
+    <Property Name="uID" Type="int" Nullable="false" />
+    <Property Name="uCount" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'Conquest.dbo.WallDefense' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="WallDefense">
+    <Key>
+      <PropertyRef Name="bLevel" />
+      <PropertyRef Name="wDefense" />
+    </Key>
+    <Property Name="bLevel" Type="int" Nullable="false" />
+    <Property Name="wDefense" Type="int" Nullable="false" />
+  </EntityType>
+  <Function Name="AddUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="userName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="DeleteVillage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vID" Type="int" Mode="In" />
+  </Function>
+</Schema>
