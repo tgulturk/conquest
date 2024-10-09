@@ -1,5 +1,4 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="village.master.cs" Inherits="Conquest1.village" %>
-<%@ Register Src="~/PageLoadTime.ascx" TagName="PageLoad" TagPrefix="pl" %>
 
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -143,7 +142,6 @@
                     </asp:UpdatePanel>
                     </div>
                     <div style="float:right;  text-align:left; min-width:184px; margin-top:-1px;">
-                        <pl:pageload id="plPageLoad" runat="server"></pl:pageload>&nbsp;|&nbsp;
                     </div>
                 </div>
             </div>

@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Data.SqlClient;
 using System.Data;
-using System.Security.Cryptography;
+using System.Configuration;
 
 namespace Conquest1
 {
@@ -13,10 +10,8 @@ namespace Conquest1
         public SqlConnection con = new SqlConnection();
         public DbConnection()
         {
-            con.ConnectionString = "Data Source=85.153.46.227;Initial Catalog=Conquest;User Id=conquest;Password=1t9u9n1c;";
-
-            //con.ConnectionString = "Data Source=KARAKKOF-PC\\SQLEXPRESS;Initial Catalog=ConquestBackup;Integrated Security=True";
-
+            string connectionString = ConfigurationManager.ConnectionStrings["ConquestGameDB"].ConnectionString;
+            con.ConnectionString = connectionString;
         }
 
         public String changepassword(String username, String password)
@@ -788,7 +783,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select m.mID as ID,a.userName as Gönderen,m.subject as Konu,m.isread as Okundumu,m.senddate as Tarih" +
-                                               " from Users a,conquest.Messages m where m.senderID=a.userID and m.getterID=" +
+                                               " from Users a,Messages m where m.senderID=a.userID and m.getterID=" +
                                                "(Select userID from Users where userName=@a) and m.isgetdelete=0 order by m.mID desc", con);
 
                 sc.Parameters.AddWithValue("@a", username);
@@ -821,7 +816,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select m.mID as ID,a.userName as Gönderen,m.subject as Konu,m.isread as Okundumu,m.senddate as Tarih" +
-                                               " from Users a,conquest.Messages m where m.getterID=a.userID and m.senderID=" +
+                                               " from Users a,Messages m where m.getterID=a.userID and m.senderID=" +
                                                "(Select userID from Users where userName=@a) and m.issenddelete=0 order by m.mID desc", con);
 
                 sc.Parameters.AddWithValue("@a", username);
@@ -854,7 +849,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select m.mID as ID,a.userName as Gönderen,m.subject as Konu,m.isread as Okundumu,m.senddate as Tarih" +
-                                               " from Users a,conquest.Messages m where m.senderID=a.userID and m.getterID=" +
+                                               " from Users a,Messages m where m.senderID=a.userID and m.getterID=" +
                                                "(Select userID from Users where userName=@a) and m.isgetdelete=1 and m.ispermdelete=0 order by m.mID desc", con);
 
                 sc.Parameters.AddWithValue("@a", username);
@@ -887,7 +882,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("INSERT INTO conquest.Messages (senderID,getterID,subject,message,senddate,issenddelete,isgetdelete,isread,ispermdelete) "
+                SqlCommand sc = new SqlCommand("INSERT INTO Messages (senderID,getterID,subject,message,senddate,issenddelete,isgetdelete,isread,ispermdelete) "
                                                 + "VALUES(@a,@b,@c,@d,GETDATE(),'0','0','0','0')", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 sc.Parameters.AddWithValue("@b", getterID);
@@ -914,7 +909,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update conquest.Messages set issenddelete = 1 where mID = @a", con);
+                SqlCommand sc = new SqlCommand("Update Messages set issenddelete = 1 where mID = @a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();
@@ -937,7 +932,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update conquest.Messages set ispermdelete = 1 where mID = @a", con);
+                SqlCommand sc = new SqlCommand("Update Messages set ispermdelete = 1 where mID = @a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();
@@ -960,7 +955,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update conquest.Messages set isgetdelete = 0 where mID = @a", con);
+                SqlCommand sc = new SqlCommand("Update Messages set isgetdelete = 0 where mID = @a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();
@@ -983,7 +978,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update conquest.Messages set isread = 1 where mID = @a", con);
+                SqlCommand sc = new SqlCommand("Update Messages set isread = 1 where mID = @a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();
@@ -1006,7 +1001,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update conquest.Messages set isgetdelete = 1 where mID = @a", con);
+                SqlCommand sc = new SqlCommand("Update Messages set isgetdelete = 1 where mID = @a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();
@@ -1029,7 +1024,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select a.username from conquest.Messages m, Users a where m.mID=@a and  a.userID=m.senderID", con);
+                SqlCommand sc = new SqlCommand("Select a.username from Messages m, Users a where m.mID=@a and  a.userID=m.senderID", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 String veri = (String)sc.ExecuteScalar();
 
@@ -1050,7 +1045,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select subject from conquest.Messages where mID=@a", con);
+                SqlCommand sc = new SqlCommand("Select subject from Messages where mID=@a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 String veri = (String)sc.ExecuteScalar();
 
@@ -1071,7 +1066,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select message from conquest.Messages where mID=@a", con);
+                SqlCommand sc = new SqlCommand("Select message from Messages where mID=@a", con);
                 sc.Parameters.AddWithValue("@a", Convert.ToInt32(mailid));
                 String veri = (String)sc.ExecuteScalar();
 
@@ -1092,7 +1087,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("select  (case COUNT(*) when 0 then '' else '('+ Cast(COUNT(*) as nvarchar)+')' end) as New from conquest.Messages where isread=0 and isgetdelete=0 and getterID=@a", con);
+                SqlCommand sc = new SqlCommand("select  (case COUNT(*) when 0 then '' else '('+ Cast(COUNT(*) as nvarchar)+')' end) as New from Messages where isread=0 and isgetdelete=0 and getterID=@a", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 String count = (String)sc.ExecuteScalar();
 
@@ -1160,7 +1155,7 @@ namespace Conquest1
                 con.Open();
                 SqlCommand sc = new SqlCommand("select Sira from (Select ROW_NUMBER() over (order by Puan desc) as Sira,uID,puan from (select v.uID,SUM(p.Point) as Puan "+
 	                                            " from Villages v inner join VillageBuildings vb on vb.vID=v.vID INNER JOIN Buildings b on b.bID=vb.bID "+
-                                                " INNER JOIN conquest.BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID<>'1' ) as Sorgu) as Sorgu1 " +
+                                                " INNER JOIN BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID<>'1' ) as Sorgu) as Sorgu1 " +
                                                 " where uID = @a", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 string count = Convert.ToString(sc.ExecuteScalar());
@@ -1184,7 +1179,7 @@ namespace Conquest1
                 con.Open();
                 SqlCommand sc = new SqlCommand("select Puan from (select v.uID,SUM(p.Point) as Puan "+
                                                 "from Villages v inner join VillageBuildings vb on vb.vID=v.vID INNER JOIN Buildings b on b.bID=vb.bID "+ 
-	                                            "INNER JOIN conquest.BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID) as Sorgu "+
+	                                            "INNER JOIN BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID) as Sorgu "+
                                                 "where uID=@a", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 int count = (int)sc.ExecuteScalar();
@@ -1240,7 +1235,7 @@ namespace Conquest1
                 con.Open();
                 SqlCommand sc = new SqlCommand("select distinct s.Sira,u.userName,s.puan,s.VSayi,floor(s.Puan/s.VSayi)as Ortalama from (Select ROW_NUMBER() over (order by S1.Puan desc) as Sira,S1.uID,S1.puan,S2.VSayi"+
                                                 " from (select v.uID,SUM(p.Point) as Puan from Villages v inner join VillageBuildings vb on vb.vID=v.vID INNER JOIN Buildings b on b.bID=vb.bID "+
-	                                            "INNER JOIN conquest.BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID<>'1' ) as S1 "+
+	                                            "INNER JOIN BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID<>'1' ) as S1 "+
 	                                            "inner join (select v.uID,COUNT(*) as VSayi from Villages v inner join Users u on u.userID=v.uID group by v.uID) as S2 on S1.uID=S2.uID) as s "+
 	                                            "inner join Users u on s.uID=u.userID inner join Villages v on v.uID=u.userID", con);
 
