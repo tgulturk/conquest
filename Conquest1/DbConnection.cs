@@ -2790,7 +2790,8 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select Price, bp.rId from BuildingPrices bp where bp.bID = @bId and " +
-                                               "bp.bLevel = (Select top 1 bLevel + 1 from VillageBuildings vb where vb.vID = @vId and vb.bID = @bId) order by bp.rId ", con);
+                                               "bp.bLevel = (Select top 1 bLevel + 1 + (Select COUNT(*) from BinaIslem where vID = @vId and bID = @bId) " +
+                                               "from VillageBuildings vb where vb.vID = @vId and vb.bID = @bId) order by bp.rId", con);
                 sc.Parameters.AddWithValue("@vId", Convert.ToInt32(vId));
                 sc.Parameters.AddWithValue("@bId", Convert.ToInt32(bId));
                 sc.ExecuteNonQuery();
