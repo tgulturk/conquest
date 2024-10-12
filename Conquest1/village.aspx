@@ -9,8 +9,8 @@
         <ItemTemplate>
             <asp:Label runat="server" ID="id" Text='<%#Eval("bID")%>'  Visible="false"></asp:Label>
             <asp:LinkButton runat="server" ID="lbBina" Text='<%#Eval("Isim")%>' Font-Bold="True" 
-                                            ForeColor="#702604" Font-Size="Small"></asp:LinkButton>&nbsp
-            (Seviye&nbsp<asp:Label runat="server" ID="lbSeviye" Text='<%#Eval("Seviye") %>'></asp:Label>)<br />
+                                            ForeColor="#702604" Font-Size="x-large"></asp:LinkButton>&nbsp
+            (Seviye&nbsp<asp:Label runat="server" ID="lbSeviye" Text='<%#Eval("Seviye") %>'></asp:Label>)<br /><br />
         </ItemTemplate>
     </asp:Repeater>
     <br />&nbsp

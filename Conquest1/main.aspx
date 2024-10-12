@@ -71,8 +71,8 @@
                 <table style=" border:1px solid white; background-color:#C1A264">
                     <tr >
                         <td style="width:200px"><asp:Label ID="lb1" runat="server" Width="200px" Text="Bina" Font-Bold="True" Font-Size="Small"></asp:Label></td>
-                        <td style="width:60px"><asp:Label ID="Label1" runat="server" Width="50px" Text="Kil" Font-Bold="True" Font-Size="Small"></asp:Label></td>
                         <td style="width:60px"><asp:Label ID="Label2" runat="server" Width="50px" Text="Odun" Font-Bold="True" Font-Size="Small"></asp:Label></td>
+                        <td style="width:60px"><asp:Label ID="Label1" runat="server" Width="50px" Text="Kil" Font-Bold="True" Font-Size="Small"></asp:Label></td>
                         <td style="width:60px"><asp:Label ID="Label3" runat="server" Width="50px" Text="Demir" Font-Bold="True" Font-Size="Small"></asp:Label></td>
                         <td style="width:80px"><asp:Label ID="Label5" runat="server" Width="80px" Text="Süre" Font-Bold="True" Font-Size="Small"></asp:Label></td>
                         <td style="width:158px; text-align:center"><asp:Label ID="Label4" runat="server" Width="158px" Text="İnşa Et" Font-Bold="True" Font-Size="Small"></asp:Label></td>
@@ -83,8 +83,8 @@
                 <table style=" border:1px solid white; background-color:#F4E4BC">
                     <tr >
                         <td style="width:200px"><asp:Label ID="lb1" runat="server" Width="200px" Text='<%#Eval("Bina")%>' Font-Size="Small"></asp:Label></td>
-                        <td style="width:60px"><asp:Label ID="lblkil" runat="server" Width="60px" Text='<%#Eval("Kil")%>'  Font-Size="Small"></asp:Label></td>
                         <td style="width:60px"><asp:Label ID="lblodun" runat="server" Width="60px" Text='<%#Eval("Odun")%>'  Font-Size="Small"></asp:Label></td>
+                        <td style="width:60px"><asp:Label ID="lblkil" runat="server" Width="60px" Text='<%#Eval("Kil")%>'  Font-Size="Small"></asp:Label></td>
                         <td style="width:60px"><asp:Label ID="lbldemir" runat="server" Width="60px" Text='<%#Eval("Demir")%>' Font-Size="Small"></asp:Label></td>
                         <td style="width:80px"><asp:Label ID="lblsure" runat="server" Width="80px" Text='<%#Eval("Sure")%>' Font-Size="Small"></asp:Label></td>
                         <td style="width:150px; text-align:center"><asp:LinkButton ID="lbInsaEt" runat="server" Width="150px" Text='<%#Eval("bLevel")+". Seviyeye Yükselt"%>' OnClientClick="DisableButton()" Font-Size="Small" ForeColor="#702604" Enabled='<%# MadenKontrol(Eval("Kil").ToString(),Eval("Odun").ToString(),Eval("Demir").ToString()) %>' EnableViewState="True"></asp:LinkButton></td>

@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Runtime.InteropServices;
 
 namespace Conquest1
 {
@@ -178,9 +179,9 @@ namespace Conquest1
                 lblSonuc.Text = dt.Rows[0]["winner"].ToString();
                 lblRtarih.Text = dt.Rows[0]["senddate"].ToString();
                 lbRgonderen.Text = dt.Rows[0]["userName"].ToString();
-                lbRgkoy.Text = dt.Rows[0]["vName"].ToString();
+                lbRgkoy.Text = dt.Rows[0]["vName"].ToString() + "(" + dt.Rows[0]["vACoordinate"].ToString() + ")";
                 lbRalici.Text = dt.Rows[0]["userName2"].ToString();
-                lbRakoy.Text = dt.Rows[0]["vName2"].ToString();
+                lbRakoy.Text = dt.Rows[0]["vName2"].ToString() + "(" + dt.Rows[0]["vDCoordinate"].ToString() + ")";
                 lblBdurum.Text = dt.Rows[0]["durum"].ToString();
                 lblRodun.Text = dt.Rows[0]["odun"].ToString();
                 lblRkil.Text = dt.Rows[0]["kil"].ToString();
@@ -189,6 +190,9 @@ namespace Conquest1
                 lblCkil.Text = dt.Rows[0]["wkil"].ToString();
                 lblCdemir.Text = dt.Rows[0]["wdemir"].ToString();
                 lblCduvar.Text = dt.Rows[0]["walllevel"].ToString();
+
+                Session["vACoordinate"] = dt.Rows[0]["vACoordinate"].ToString();
+                Session["vDCoordinate"] = dt.Rows[0]["vDCoordinate"].ToString();
 
                 DataTable dt2 = con.RaporOrduIcerik(reportid);
                 lblSMmizrak.Text = dt2.Rows[0]["sCount"].ToString();
@@ -291,12 +295,12 @@ namespace Conquest1
 
         protected void lbRgkoy_Click(object sender, EventArgs e)
         {
-            String vID = con.getvillageID(lbRgkoy.Text).ToString();
+            var coordinate = Session["vACoordinate"].ToString().Split('|');
+            string vID = con.getvillageID(Convert.ToInt32(coordinate[0]), Convert.ToInt32(coordinate[1])).ToString();
             Session["vID"] = vID;
-            string x = con.getvillageX(vID);
-            string y = con.getvillageY(vID);
-            Session["x"] = Aralik(Convert.ToInt32(x));
-            Session["y"] = Aralik(Convert.ToInt32(y));
+            Session["mvID"] = vID;
+            Session["x"] = Aralik(Convert.ToInt32(coordinate[0]));
+            Session["y"] = Aralik(Convert.ToInt32(coordinate[1]));
             Response.Redirect("map.aspx");
         }
 
@@ -308,12 +312,12 @@ namespace Conquest1
 
         protected void lbRakoy_Click(object sender, EventArgs e)
         {
-            String vID = con.getvillageID(lbRakoy.Text).ToString();
+            var coordinate = Session["vDCoordinate"].ToString().Split('|');
+            string vID = con.getvillageID(Convert.ToInt32(coordinate[0]), Convert.ToInt32(coordinate[1])).ToString();
             Session["vID"] = vID;
-            string x = con.getvillageX(vID);
-            string y = con.getvillageY(vID);
-            Session["x"] = Aralik(Convert.ToInt32(x));
-            Session["y"] = Aralik(Convert.ToInt32(y));
+            Session["mvID"] = vID; 
+            Session["x"] = Aralik(Convert.ToInt32(coordinate[0]));
+            Session["y"] = Aralik(Convert.ToInt32(coordinate[1]));
             Response.Redirect("map.aspx");
         }
 

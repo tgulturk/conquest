@@ -256,7 +256,7 @@ body {
     width:592px;
     height:100%;
     min-height:72px;
-    max-height:500px;
+    max-height:650px;
     border:1px gray solid;
     padding-right:3%;
     background: #f2e4c1 url(images/bg_tek.png) scroll left top repeat-x;
@@ -298,11 +298,11 @@ body {
          
 #villageunits
 {
-    /*padding-top:5%;*/
+    padding-top:5%;
     padding-left:5%;
     width:95%;
     /*height:32%;*/
-    min-height:0px;
+    min-height:85px;
     max-height:175px;
     /*border:1px gray solid;*/
     margin-top:3%;
@@ -354,32 +354,30 @@ body {
     box-shadow:         6px 8px 6px -7px black;
     text-align:right;
     }
-    
-#overview
-{
-    padding-top:1%;
-    padding-left:2%;
-    float:left;
-    width:880px;
-    min-height:100px;
-    max-height:500px;
-    /*border:1px gray solid;*/
+
+#overview {
+    padding-top: 1%;
+    padding-left: 2%;
+    float: left;
+    width: 880px;
+    min-height: 100px;
+    /*max-height:500px;
+    border:1px gray solid;*/
     background: #f2e4c1 url(images/bg_tek.png) scroll left top repeat-x;
     border-radius: 10px; /* Standart */
     -moz-border-radius: 10px; /* Firefox */
     -webkit-border-radius: 10px; /* Safari ve Chrome */
-    -moz-box-shadow:    6px 8px 6px -7px black;
+    -moz-box-shadow: 6px 8px 6px -7px black;
     -webkit-box-shadow: 6px 8px 6px -7px black;
-    box-shadow:         6px 8px 6px -7px black;
-    }
+    box-shadow: 6px 8px 6px -7px black;
+}
     
 #messageswrapper
 {
     padding-top:1%;
     float:left;
     width:897px;
-    min-height:250px;
-    max-height:500px;
+    min-height:550px;
     /*height:250px;*/
     /*border:1px gray solid;*/
     background: #f2e4c1 url(images/bg_tek.png) scroll left top repeat-x;

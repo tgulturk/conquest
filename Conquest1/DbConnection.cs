@@ -342,6 +342,28 @@ namespace Conquest1
             }
         } // köyün ID sini getir
 
+        public int getvillageID(int x, int y)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("select vID from Villages where vX=@x and vY=@y", con);
+                sc.Parameters.AddWithValue("@x", x);
+                sc.Parameters.AddWithValue("@y", y);
+                int count = (int)sc.ExecuteScalar();
+
+                return count;
+            }
+            catch
+            {
+                return -1;
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // köyün ID sini getir
+
         public int getvillageID(String vX,String vY)
         {
             try
@@ -1235,7 +1257,7 @@ namespace Conquest1
                 con.Open();
                 SqlCommand sc = new SqlCommand("select distinct s.Sira,u.userName,s.puan,s.VSayi,floor(s.Puan/s.VSayi)as Ortalama from (Select ROW_NUMBER() over (order by S1.Puan desc) as Sira,S1.uID,S1.puan,S2.VSayi"+
                                                 " from (select v.uID,SUM(p.Point) as Puan from Villages v inner join VillageBuildings vb on vb.vID=v.vID INNER JOIN Buildings b on b.bID=vb.bID "+
-	                                            "INNER JOIN BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID<>'1' ) as S1 "+
+                                                "INNER JOIN BuildingPoints p on p.bID=b.bID where p.bLevel=vb.bLevel group by v.uID having v.uID not in (1,13) ) as S1 " +
 	                                            "inner join (select v.uID,COUNT(*) as VSayi from Villages v inner join Users u on u.userID=v.uID group by v.uID) as S2 on S1.uID=S2.uID) as s "+
 	                                            "inner join Users u on s.uID=u.userID inner join Villages v on v.uID=u.userID", con);
 
@@ -1431,24 +1453,37 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("select b.bID,b.bName +' (Seviye '+ Convert(nvarchar,vb.bLevel)+')' as Bina, "+
-	                    "bt.bLevel, "+
-	                    "kil.Price as Kil, "+
-	                    "odun.Price as Odun, "+
-	                    "demir.Price as Demir, "+
-	                    "left(bt.time,8) as Sure "+
-	                    "from VillageBuildings vb INNER JOIN Buildings b on b.bID=vb.bID "+
-		                    "inner join BuildingPrices kil on kil.bID=b.bID  "+
-		                    "inner join BuildingPrices odun on odun.bID=b.bID "+
-		                    "inner join BuildingPrices demir on demir.bID=b.bID "+ 
-		                    "inner join BuildTime bt on bt.bID=b.bID "+
-		                    "inner join (Select b.bID,ISNULL(s.Toplam,0) as Toplam from (Select bID,SUM(islem) as Toplam from BinaIslem where vID=@a group by bID) s "+
-		                    "right join Buildings b on b.bID=s.bID) s "+
-		                    "on s.bID=b.bID "+
-	                    "where vb.vID=@a and kil.rID=1 and odun.rID=2 and demir.rID=3 and kil.bLevel=vb.bLevel+s.Toplam+1 "+ 
-		                    "and kil.bLevel=odun.bLevel and odun.bLevel=demir.bLevel and bt.bLevel=vb.bLevel+s.Toplam+1 "+
-		                    "and vb.buildable=1 "+ 
-	                    "order by vb.bID; ", con);
+                SqlCommand sc = new SqlCommand("SELECT b.bID, " +
+                                               "b.bName + ' (Seviye ' + CONVERT(nvarchar, vb.bLevel) + ')' AS Bina, " +
+                                               "bt.bLevel, " +
+                                               "kil.Price AS Kil, " +
+                                               "odun.Price AS Odun, " +
+                                               "demir.Price AS Demir, " +
+                                               "LEFT((dbo.AdjustTime(bt.time,"+
+                                               "(SELECT TOP 1 CAST(tr.TimeReduce AS DECIMAL) / 100 "+
+                                               "FROM TimeReduce tr "+
+                                               "INNER JOIN VillageBuildings vb2 ON vb2.bID = 1 AND vb2.vID = @a "+
+                                               "WHERE tr.bID = 1 AND tr.bLevel = vb2.bLevel))), 8) AS Sure "+
+                                               "FROM VillageBuildings vb " +
+                                               "INNER JOIN Buildings b ON b.bID = vb.bID " +
+                                               "INNER JOIN BuildingPrices kil ON kil.bID = b.bID " +
+                                               "INNER JOIN BuildingPrices odun ON odun.bID = b.bID " +
+                                               "INNER JOIN BuildingPrices demir ON demir.bID = b.bID " +
+                                               "INNER JOIN BuildTime bt ON bt.bID = b.bID " +
+                                               "INNER JOIN ( " +
+                                               "SELECT b.bID, ISNULL(s.Toplam, 0) AS Toplam " +
+                                               "FROM (SELECT bID, SUM(islem) AS Toplam FROM BinaIslem WHERE vID = @a GROUP BY bID) s " +
+                                               "RIGHT JOIN Buildings b ON b.bID = s.bID) s ON s.bID = b.bID " +
+                                               "WHERE vb.vID = @a " +
+                                               "AND kil.rID = 1 " +
+                                               "AND odun.rID = 2 " +
+                                               "AND demir.rID = 3 " +
+                                               "AND kil.bLevel = vb.bLevel + s.Toplam + 1 " +
+                                               "AND kil.bLevel = odun.bLevel " +
+                                               "AND odun.bLevel = demir.bLevel " +
+                                               "AND bt.bLevel = vb.bLevel + s.Toplam + 1 " +
+                                               "AND vb.buildable = 1 " +
+                                               "ORDER BY vb.bID;", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
 
@@ -2600,7 +2635,9 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select s.reportID,case winner when 1 then 'Savunan Kazandı' else 'Saldıran Kazandı' end as winner,s.date as senddate, "+
-	                    "u.userName,v.vName,u2.userName as userName2,v2.vName as vName2,case ismisyoner when 1 then 'Köyün bağlılığı '+CONVERT(nvarchar,s.misyonerred)+ "+
+                                               "u.userName,v.vName,CONVERT(nvarchar,v.vX) + '|' + CONVERT(nvarchar,v.vY) as vACoordinate," +
+                                               "u2.userName as userName2,v2.vName as vName2,CONVERT(nvarchar,v2.vX) + '|' + CONVERT(nvarchar,v2.vY) as vDCoordinate," +
+                                               "case ismisyoner when 1 then 'Köyün bağlılığı '+CONVERT(nvarchar,s.misyonerred)+ " +
 	                    "' azaldı.' else '' end as durum,s.kil,s.odun,s.demir,case isscouted when 1 then wkil else '-' end as wkil, "+
 	                    "case isscouted when 1 then wodun else '-' end as wodun,case isscouted when 1 then wdemir else '-' end as wdemir, "+
 	                    "case isscouted when 1 then walllevel else '-' end as walllevel from SaldiriRapor s,Villages v,Villages v2,Users u,Users u2 "+
