@@ -40,22 +40,26 @@ namespace Conquest1
         protected void btnYetistir_Click(object sender, EventArgs e)
         {
             String villageID = Session["VillageID"].ToString();
-            DataTable dt = con.Madenler(villageID);
-            int TModun = Convert.ToInt32(lblModun.Text) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
-            int TKodun = Convert.ToInt32(lblKodun.Text) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
-            int TBodun = Convert.ToInt32(lblBodun.Text) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
-            int TMkil = Convert.ToInt32(lblMkil.Text) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
-            int TKkil = Convert.ToInt32(lblKkil.Text) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
-            int TBkil = Convert.ToInt32(lblBkil.Text) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
-            int TMdemir = Convert.ToInt32(lblMdemir.Text) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
-            int TKdemir = Convert.ToInt32(lblKdemir.Text) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
-            int TBdemir = Convert.ToInt32(lblBdemir.Text) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
-            int TTpop = Convert.ToInt32(lblMpop.Text) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text) +
-                 Convert.ToInt32(lblKpop.Text) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text) +
-                 Convert.ToInt32(lblBpop.Text) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
+
+            var units = con.getUnits();
+
+            int TModun = Convert.ToInt32(units.Rows[0]["Odun"].ToString()) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
+            int TKodun = Convert.ToInt32(units.Rows[1]["Odun"].ToString()) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
+            int TBodun = Convert.ToInt32(units.Rows[2]["Odun"].ToString()) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
+            int TMkil = Convert.ToInt32(units.Rows[0]["Kil"].ToString()) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
+            int TKkil = Convert.ToInt32(units.Rows[1]["Kil"].ToString()) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
+            int TBkil = Convert.ToInt32(units.Rows[2]["Kil"].ToString()) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
+            int TMdemir = Convert.ToInt32(units.Rows[0]["Demir"].ToString()) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
+            int TKdemir = Convert.ToInt32(units.Rows[1]["Demir"].ToString()) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
+            int TBdemir = Convert.ToInt32(units.Rows[2]["Demir"].ToString()) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
+            int TTpop = Convert.ToInt32(units.Rows[0]["uPopulation"].ToString()) * Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text) +
+                 Convert.ToInt32(units.Rows[1]["uPopulation"].ToString()) * Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text) +
+                 Convert.ToInt32(units.Rows[2]["uPopulation"].ToString()) * Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
 
             int Tpop = Convert.ToInt32(con.gettotalpop(villageID));
             int Tkpop = Convert.ToInt32(con.getusedpop(villageID));
+
+            DataTable dt = con.Madenler(villageID);
 
             if ((TModun+TKodun+TBodun) <= Convert.ToInt32(dt.Rows[0]["Miktar"].ToString())
                 && (TModun + TKodun + TBodun) > 0 && (TMkil+TKkil+TBkil) <= Convert.ToInt32(dt.Rows[1]["Miktar"].ToString())
@@ -66,19 +70,19 @@ namespace Conquest1
                 {
                     if (tbMizrak.Text != "")
                     {
-                        String donen = con.addAskerIslem(villageID, 1, Convert.ToInt32(tbMizrak.Text), TMkil, TModun, TMdemir, lblMsure.Text, 45, 0);
+                        String donen = con.addAskerIslem(villageID, 1, Convert.ToInt32(tbMizrak.Text), TMkil, TModun, TMdemir, units.Rows[0]["Sure"].ToString(), 45, 0);
                         String dönen = con.MadenAzalt(villageID, TMkil.ToString(), TModun.ToString(), TMdemir.ToString());
                     }
 
                     if (tbKilic.Text != "")
                     {
-                        String donen = con.addAskerIslem(villageID, 2, Convert.ToInt32(tbKilic.Text), TKkil, TKodun, TKdemir, lblKsure.Text, 50, 0);
+                        String donen = con.addAskerIslem(villageID, 2, Convert.ToInt32(tbKilic.Text), TKkil, TKodun, TKdemir, units.Rows[1]["Sure"].ToString(), 50, 0);
                         String dönen = con.MadenAzalt(villageID, TKkil.ToString(), TKodun.ToString(), TKdemir.ToString());
                     }
 
                     if (tbBaltaci.Text != "")
                     {
-                        String donen = con.addAskerIslem(villageID, 3, Convert.ToInt32(tbBaltaci.Text), TBkil, TBodun, TBdemir, lblBsure.Text, 45, 0);
+                        String donen = con.addAskerIslem(villageID, 3, Convert.ToInt32(tbBaltaci.Text), TBkil, TBodun, TBdemir, units.Rows[2]["Sure"].ToString(), 45, 0);
                         String dönen = con.MadenAzalt(villageID, TBkil.ToString(), TBodun.ToString(), TBdemir.ToString());
                     }
                 }

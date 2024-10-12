@@ -1475,8 +1475,8 @@ namespace Conquest1
                                                "FROM (SELECT bID, SUM(islem) AS Toplam FROM BinaIslem WHERE vID = @a GROUP BY bID) s " +
                                                "RIGHT JOIN Buildings b ON b.bID = s.bID) s ON s.bID = b.bID " +
                                                "WHERE vb.vID = @a " +
-                                               "AND kil.rID = 1 " +
-                                               "AND odun.rID = 2 " +
+                                               "AND odun.rID = 1 " +
+                                               "AND kil.rID = 2 " +
                                                "AND demir.rID = 3 " +
                                                "AND kil.bLevel = vb.bLevel + s.Toplam + 1 " +
                                                "AND kil.bLevel = odun.bLevel " +
@@ -2037,14 +2037,14 @@ namespace Conquest1
             }
         } // köydeki tüccarların sayısını getir
 
-        public DataTable BarracksUnits()
+        public DataTable getUnits()
         {
             try
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select u1price as Odun,u2price as Kil,u3price as Demir,uPopulation, "+
 	                    "left(right(convert(varchar,dateadd(second,uTime,'01/01/1901 0:0:0.000'),121),12),8) as Sure "+
-	                    "from Units where uID<4 order by uID asc", con);
+	                    "from Units order by uID asc", con);
                 sc.ExecuteNonQuery();
 
                 SqlDataAdapter da = new SqlDataAdapter();
@@ -2782,6 +2782,61 @@ namespace Conquest1
                 con.Close();
             }
         } // savunma raporu okundu işaretle
+
+
+        public DataTable getBinaMadenGereksinimleri(string vId, string bId)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select Price, bp.rId from BuildingPrices bp where bp.bID = @bId and " +
+                                               "bp.bLevel = (Select top 1 bLevel + 1 from VillageBuildings vb where vb.vID = @vId and vb.bID = @bId) order by bp.rId ", con);
+                sc.Parameters.AddWithValue("@vId", Convert.ToInt32(vId));
+                sc.Parameters.AddWithValue("@bId", Convert.ToInt32(bId));
+                sc.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sc;
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+
+            }
+
+            catch
+            {
+                return null;
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        } // Bina maden gereksinimlerini getir
+        
+        public string getBinaInsaatSure(string villageId, string bId)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select left(bt.time,8) from BuildTime bt where bt.bLevel = (Select top 1 bLevel+1 from VillageBuildings vb where vb.vID=@vId and vb.bID=@bId) and bt.bID = @bId", con);
+                sc.Parameters.AddWithValue("@vId", Convert.ToInt32(villageId));
+                sc.Parameters.AddWithValue("@bId", Convert.ToInt32(bId));
+                String veri = (String)sc.ExecuteScalar();
+
+                return veri.ToString();
+            }
+            catch
+            {
+                return "###BOŞ DÖNDÜ###";
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // mesajın göndericisini getir
 
     }
 }

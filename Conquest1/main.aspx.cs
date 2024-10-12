@@ -47,10 +47,14 @@ namespace Conquest1
             (e.Item.FindControl("lbInsaEt") as LinkButton).Enabled = false;
             string villageID = Session["VillageID"].ToString();
             String bID = (e.Item.FindControl("id") as Label).Text;
-            String kil =  (e.Item.FindControl("lblkil") as Label).Text;
-            String odun= (e.Item.FindControl("lblodun") as Label).Text;
-            String demir = (e.Item.FindControl("lbldemir") as Label).Text;
-            String sure = (e.Item.FindControl("lblsure") as Label).Text;
+
+            var madenler = con.getBinaMadenGereksinimleri(villageID, bID);
+            String odun = madenler.Rows[0]["Price"].ToString();
+            String kil =  madenler.Rows[1]["Price"].ToString();
+            String demir = madenler.Rows[2]["Price"].ToString();
+            
+            var sure = con.getBinaInsaatSure(villageID, bID);
+
             String valid = con.BinaIslemValid(villageID, bID, kil, odun, demir);
             Boolean valid2 = MadenKontrol(kil, odun, demir);
             if (valid == "0" && valid2==true)

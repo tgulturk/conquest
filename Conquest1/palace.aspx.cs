@@ -41,15 +41,19 @@ namespace Conquest1
         protected void btnYetistir_Click(object sender, EventArgs e)
         {
             String villageID = Session["VillageID"].ToString();
-            DataTable dt = con.Madenler(villageID);
-            int TModun = Convert.ToInt32(lblModun.Text) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
-            int TMkil = Convert.ToInt32(lblMkil.Text) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
-            int TMdemir = Convert.ToInt32(lblMdemir.Text) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
-            int TTpop = Convert.ToInt32(lblMpop.Text) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+
+            var units = con.getUnits();
+
+            int TModun = Convert.ToInt32(units.Rows[6]["Odun"].ToString()) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+            int TMkil = Convert.ToInt32(units.Rows[6]["Kil"].ToString()) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+            int TMdemir = Convert.ToInt32(units.Rows[6]["Demir"].ToString()) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+            int TTpop = Convert.ToInt32(units.Rows[6]["uPopulation"].ToString()) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
 
             int Tpop = Convert.ToInt32(con.gettotalpop(villageID));
             int Tkpop = Convert.ToInt32(con.getusedpop(villageID));
             int sayi = Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text) + con.getMisyonerCount(villageID); ;
+
+            DataTable dt = con.Madenler(villageID);
 
             if (sayi < 4)
             {
@@ -63,7 +67,7 @@ namespace Conquest1
                     {
                         if (tbMisyoner.Text != "")
                         {
-                            String donen = con.addAskerIslem(villageID, 7, Convert.ToInt32(tbMisyoner.Text), TMkil, TModun, TMdemir, lblMsure.Text, 14400, 2);
+                            String donen = con.addAskerIslem(villageID, 7, Convert.ToInt32(tbMisyoner.Text), TMkil, TModun, TMdemir, units.Rows[6]["Sure"].ToString(), 14400, 2);
                             String dönen = con.MadenAzalt(villageID, TMkil.ToString(), TModun.ToString(), TMdemir.ToString());
                         }
                     }
