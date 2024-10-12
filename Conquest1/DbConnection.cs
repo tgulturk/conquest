@@ -2822,7 +2822,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select left(bt.time,8) from BuildTime bt where bt.bLevel = (Select top 1 bLevel+1 from VillageBuildings vb where vb.vID=@vId and vb.bID=@bId) and bt.bID = @bId", con);
+                SqlCommand sc = new SqlCommand("Select left(bt.time,8) from BuildTime bt where bt.bLevel = (Select top 1 bLevel+1+(Select COUNT(*) from BinaIslem where vID = @vId and bID = @bId) from VillageBuildings vb where vb.vID=@vId and vb.bID=@bId) and bt.bID = @bId", con);
                 sc.Parameters.AddWithValue("@vId", Convert.ToInt32(villageId));
                 sc.Parameters.AddWithValue("@bId", Convert.ToInt32(bId));
                 String veri = (String)sc.ExecuteScalar();
