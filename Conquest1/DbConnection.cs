@@ -2822,7 +2822,13 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select left(bt.time,8) from BuildTime bt where bt.bLevel = (Select top 1 bLevel+1+(Select COUNT(*) from BinaIslem where vID = @vId and bID = @bId) from VillageBuildings vb where vb.vID=@vId and vb.bID=@bId) and bt.bID = @bId", con);
+                SqlCommand sc = new SqlCommand("Select LEFT((dbo.AdjustTime(bt.time,"+
+                    "(SELECT TOP 1 CAST(tr.TimeReduce AS DECIMAL) / 100 " +
+                    "FROM TimeReduce tr " +
+                    "INNER JOIN VillageBuildings vb2 ON vb2.bID = 1 AND vb2.vID = @vId " +
+                    "WHERE tr.bID = 1 AND tr.bLevel = vb2.bLevel))), 8) AS Sure  from BuildTime bt " +
+                    "where bt.bLevel = (Select top 1 bLevel + 1 + (Select COUNT(*) from BinaIslem where vID = @vId and bID = @bId) " +
+                    "from VillageBuildings vb where vb.vID = @vId and vb.bID = @bId) and bt.bID = @bId", con);
                 sc.Parameters.AddWithValue("@vId", Convert.ToInt32(villageId));
                 sc.Parameters.AddWithValue("@bId", Convert.ToInt32(bId));
                 String veri = (String)sc.ExecuteScalar();
