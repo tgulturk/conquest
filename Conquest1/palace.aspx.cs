@@ -50,7 +50,7 @@ namespace Conquest1
             int TTpop = Convert.ToInt32(units.Rows[6]["uPopulation"].ToString()) * Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
 
             int Tpop = Convert.ToInt32(con.gettotalpop(villageID));
-            int Tkpop = Convert.ToInt32(con.getusedpop(villageID));
+            int Tkpop = Convert.ToInt32(con.getusedpop(villageID)) + con.getRecruitingpop(villageID);
             int sayi = Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text) + con.getMisyonerCount(villageID); ;
 
             DataTable dt = con.Madenler(villageID);

@@ -609,6 +609,30 @@ namespace Conquest1
             }
         } // toplam popülasyonu getir
 
+        public int getRecruitingpop(String villageID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select ISNULL(sum(a.Population),0) as Population from "+
+                "(Select sayi * uPopulation as Population from AskerIslem ai "+
+                "inner join Units u on u.uId = ai.uId "+
+                "where vId = @a) a", con);
+                sc.Parameters.AddWithValue("@a", villageID);
+                int count = (int)sc.ExecuteScalar();
+
+                return count;
+            }
+            catch(SqlException ex)
+            {
+                return 0;
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // toplam popülasyonu getir
+
         public string getrescapacity(String villageID)
         {
             try

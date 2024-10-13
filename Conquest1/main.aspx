@@ -12,7 +12,7 @@
         }
         function DisableButton() {
             if (i == 1) {
-                document.forms[0].submit();
+                //document.forms[0].submit();
                 window.setTimeout("disableButton()", 0);
             }
             else i = 1;
@@ -25,7 +25,7 @@
             }
         }
 
-</script>
+    </script>
     <div id="overview" style="overflow: -moz-scrollbars-vertical; overflow-y: auto;">
         <h3>ANA BİNA </h3>
         <br />
@@ -87,7 +87,7 @@
                         <td style="width:60px"><asp:Label ID="lblkil" runat="server" Width="60px" Text='<%#Eval("Kil")%>'  Font-Size="Small"></asp:Label></td>
                         <td style="width:60px"><asp:Label ID="lbldemir" runat="server" Width="60px" Text='<%#Eval("Demir")%>' Font-Size="Small"></asp:Label></td>
                         <td style="width:80px"><asp:Label ID="lblsure" runat="server" Width="80px" Text='<%#Eval("Sure")%>' Font-Size="Small"></asp:Label></td>
-                        <td style="width:150px; text-align:center"><asp:LinkButton ID="lbInsaEt" runat="server" Width="150px" Text='<%#Eval("bLevel")+". Seviyeye Yükselt"%>' OnClientClick="DisableButton()" Font-Size="Small" ForeColor="#702604" Enabled='<%# MadenKontrol(Eval("Kil").ToString(),Eval("Odun").ToString(),Eval("Demir").ToString()) %>' EnableViewState="True"></asp:LinkButton></td>
+                        <td style="width:150px; text-align:center"><asp:LinkButton ID="lbInsaEt" runat="server" Width="150px" Text='<%#Eval("bLevel")+". Seviyeye Yükselt"%>' OnClientClick="DisableButton();" Font-Size="Small" ForeColor="#702604" Enabled='<%# MadenKontrol(Eval("Kil").ToString(),Eval("Odun").ToString(),Eval("Demir").ToString()) %>' EnableViewState="True"></asp:LinkButton></td>
                         <td style="width:0px; visibility:hidden"><asp:Label ID="id" runat="server" Width="0px" Text='<%#Eval("bID")%>' Font-Size="Small" Visible="false"></asp:Label></td>
                         <td style="width:0px; visibility:hidden"><asp:Label ID="lvl" runat="server" Width="0px" Text='<%#Eval("bLevel")%>' Font-Size="Small" Visible="false"></asp:Label></td>
                     </tr>
