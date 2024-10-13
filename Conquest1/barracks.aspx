@@ -51,6 +51,8 @@
                 <td><asp:Label ID="Label7" runat="server" Text="Yetiştir" Font-Bold="True" Font-Size="Small" Width="120px"></asp:Label></td>
             </tr>
         </table>
+    <asp:UpdatePanel ID="UP4" runat="server" UpdateMode="Conditional">
+    <ContentTemplate>      
         <table style=" border:1px solid white; background-color:#F4E4BC">
             <tr>
                 <td><asp:Label ID="Label8" runat="server" Text="Mızrakçı" Font-Size="Small" Width="100px"></asp:Label></td>
@@ -79,7 +81,8 @@
                 <td><asp:Label ID="lblBsure" runat="server" Font-Size="Small" Text="00:00:45" Width="65px"></asp:Label></td>
                 <td style="width:120px"><asp:TextBox ID="tbBaltaci" runat="server" Width="70px"></asp:TextBox></td>
             </tr>
-        </table>
+        </table> </ContentTemplate>
+    </asp:UpdatePanel>        
         <table>
             <tr>
                 <td><asp:Label ID="Label11" runat="server" Font-Size="Small" Width="100px"></asp:Label></td>

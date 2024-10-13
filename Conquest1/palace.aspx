@@ -39,7 +39,9 @@
             </ContentTemplate>
         </asp:UpdatePanel>        
         <br />
-        <br />
+        <br /> 
+        <asp:UpdatePanel ID="UP4" runat="server" UpdateMode="Conditional">
+            <ContentTemplate>     
         <table style=" border:1px solid white; background-color:#C1A264">
             <tr>
                 <td><asp:Label ID="Label1" runat="server" Text="Birim" Font-Bold="True" Font-Size="Small" Width="100px"></asp:Label></td>
@@ -62,6 +64,8 @@
                 <td style="width:120px"><asp:TextBox ID="tbMisyoner" runat="server" Width="70px"></asp:TextBox></td>
             </tr>
         </table>
+        </ContentTemplate>
+        </asp:UpdatePanel>  
         <table>
             <tr>
                 <td><asp:Label ID="Label11" runat="server" Font-Size="Small" Width="100px"></asp:Label></td>

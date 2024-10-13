@@ -85,6 +85,11 @@ namespace Conquest1
                         String donen = con.addAskerIslem(villageID, 3, Convert.ToInt32(tbBaltaci.Text), TBkil, TBodun, TBdemir, units.Rows[2]["Sure"].ToString(), 45, 0);
                         String dönen = con.MadenAzalt(villageID, TBkil.ToString(), TBodun.ToString(), TBdemir.ToString());
                     }
+
+                    tbMizrak.Text = "";
+                    tbKilic.Text = "";
+                    tbBaltaci.Text = "";
+                    UP4.Update();
                 }
                 else
                 {
