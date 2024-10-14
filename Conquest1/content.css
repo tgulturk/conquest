@@ -508,3 +508,79 @@ body {
 {
     margin: 10px 10px 10px 10px;
     }
+
+.mapVillageRed {
+    position: relative; /* Ebeveyn div için pozisyonu relative yap */
+    max-width: 51px;
+    max-height: 36px;
+    min-width: 51px;
+    min-height: 36px;
+    float: left;
+    border: 1px solid grey;
+}
+
+    .mapVillageRed::before {
+        content: ""; /* İçerik bırak */
+        position: absolute; /* Pozisyonu kesinleştir */
+        top: 2px; /* Üstten sıfır yerleştir */
+        left: 2px; /* Soldan sıfır yerleştir */
+        width: 7px; /* Dairenin genişliği */
+        height: 7px; /* Dairenin yüksekliği */
+        border-radius: 50%; /* Daire yapmak için */
+        background-color: red;
+        border: 1px solid black;
+    }
+
+.mapVillageYellow {
+    position: relative; /* Ebeveyn div için pozisyonu relative yap */
+    max-width: 51px;
+    max-height: 36px;
+    min-width: 51px;
+    min-height: 36px;
+    float: left;
+    border: 1px solid grey;
+}
+
+    .mapVillageYellow::before {
+        content: ""; /* İçerik bırak */
+        position: absolute; /* Pozisyonu kesinleştir */
+        top: 2px; /* Üstten sıfır yerleştir */
+        left: 2px; /* Soldan sıfır yerleştir */
+        width: 7px; /* Dairenin genişliği */
+        height: 7px; /* Dairenin yüksekliği */
+        border-radius: 50%; /* Daire yapmak için */
+        background-color: yellow;
+        border: 1px solid black;
+    }
+
+.mapVillageWhite {
+    position: relative; /* Ebeveyn div için pozisyonu relative yap */
+    max-width: 51px;
+    max-height: 36px;
+    min-width: 51px;
+    min-height: 36px;
+    float: left;
+    border: 1px solid grey;
+}
+
+    .mapVillageWhite::before {
+        content: ""; /* İçerik bırak */
+        position: absolute; /* Pozisyonu kesinleştir */
+        top: 2px; /* Üstten sıfır yerleştir */
+        left: 2px; /* Soldan sıfır yerleştir */
+        width: 7px; /* Dairenin genişliği */
+        height: 7px; /* Dairenin yüksekliği */
+        border-radius: 50%; /* Daire yapmak için */
+        background-color: white;
+        border: 1px solid black;
+    }
+
+.mapDefault {
+    position: relative; /* Ebeveyn div için pozisyonu relative yap */
+    max-width: 51px;
+    max-height: 36px;
+    min-width: 51px;
+    min-height: 36px;
+    float: left;
+    border: 1px solid grey;
+}

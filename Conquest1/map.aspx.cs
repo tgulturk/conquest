@@ -52,9 +52,48 @@ namespace Conquest1
             else
             {
                 string uID = con.getvillageuserID(vID);
-                if (uID == "1") return "images/bandit.png";
-                else return "images/vimage.png";
+                int point = con.getVillagePoint(vID);
+                string image = "images/v";
+
+                if (point >= 11000) image += "6";
+                else if (point >= 9000) image += "5";
+                else if (point >= 3000) image += "4";
+                else if (point >= 1000) image += "3";
+                else if (point >= 300) image += "2";
+                else image += "1";
+
+                if (uID == "1") image += "_left.png";
+                else image += ".png";
+
+                return image;
             }             
+        }
+        protected string GetClass(string vID)
+        {
+            string villageID = Session["VillageID"].ToString();
+
+            if (vID=="0")
+            {
+                return "class=\"mapDefault\"";
+            }
+
+            string uID = con.getvillageuserID(vID);
+            string villageUID = con.getvillageuserID(villageID);
+
+            if (vID == villageID)
+                return "class=\"mapVillageWhite\"";
+
+            else if (uID == villageUID)
+                return "class=\"mapVillageYellow\"";
+
+            else if (uID == "1")
+                return "class=\"mapDefault\"";
+
+            else if (vID != "0")
+                return "class=\"mapVillageRed\"";
+
+            else
+                return "class=\"mapDefault\"";
         }
 
         protected void HaritaCiz()
@@ -69,25 +108,29 @@ namespace Conquest1
 
         protected void ibalt_Click(object sender, ImageClickEventArgs e)
         {
-            Session["y"] = Convert.ToInt32(Session["y"].ToString()) + 10;
+            var y = Convert.ToInt32(Session["y"].ToString()) + 10;
+            Session["y"] = y > 50 ? 50 : y;
             HaritaCiz();
         }
 
         protected void ibust_Click(object sender, ImageClickEventArgs e)
         {
-            Session["y"] = Convert.ToInt32(Session["y"].ToString()) - 10;
+            var y = Convert.ToInt32(Session["y"].ToString()) - 10;
+            Session["y"] = y < 0 ? 0 : y;
             HaritaCiz();
         }
 
         protected void ibsag_Click(object sender, ImageClickEventArgs e)
         {
-            Session["x"] = Convert.ToInt32(Session["x"].ToString()) + 10;
+            var x = Convert.ToInt32(Session["x"].ToString()) + 10;
+            Session["x"] = x > 50 ? 50 : x;
             HaritaCiz();
         }
 
         protected void ibsol_Click(object sender, ImageClickEventArgs e)
         {
-            Session["x"] = Convert.ToInt32(Session["x"].ToString()) - 10;
+            var x = Convert.ToInt32(Session["x"].ToString()) - 10;
+            Session["x"] = x < 0 ? 0 : x;
             HaritaCiz();
         }
 
@@ -185,6 +228,9 @@ namespace Conquest1
         protected void rep_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             string vID = (e.Item.FindControl("vID") as Label).Text;
+
+            if (vID == "0") return;
+
             string uID = con.getvillageuserID(vID);
             Session["mvID"] = vID;
 

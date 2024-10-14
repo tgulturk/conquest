@@ -1242,6 +1242,29 @@ namespace Conquest1
             }
         } // kullanıcı puanını getir
 
+        public int getVillagePoint(string villageId)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select ISNULL(Sum(bp.Point),0) as Point from VillageBuildings vb " +
+                                               "inner join BuildingPoints bp on bp.bID = vb.bID and bp.bLevel = vb.bLevel " +
+                                               "where vb.vID =@a", con);
+                sc.Parameters.AddWithValue("@a", villageId);
+                int count = (int)sc.ExecuteScalar();
+
+                return count;
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // köy puanını getir
+
         public DataTable getlast10login(int userID)
         {
             try
@@ -2658,7 +2681,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Update MarketRapor set isgetdelete 1 where reportID=@b", con);
+                SqlCommand sc = new SqlCommand("Update SaldiriRapor set isgetdelete = 1 where reportID=@b", con);
                 sc.Parameters.AddWithValue("@b", reportID);
                 sc.ExecuteNonQuery();
                 //int count = (int)sc.ExecuteScalar();

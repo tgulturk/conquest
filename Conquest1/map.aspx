@@ -34,7 +34,7 @@
                             
                             <asp:Repeater runat="server" ID="rep" onitemcommand="rep_ItemCommand">
                                 <ItemTemplate>
-                                    <div <%# BackColor(Eval("vID").ToString()) %>">
+                                    <div <%# GetClass(Eval("vID").ToString()) %>">
                                         <asp:Label runat="server" ID="vID" Text='<%#Eval("vID")%>' Visible="false"></asp:Label>
                                         <asp:ImageButton runat="server" ID="ib" style='<%# Cursor(Eval("vID").ToString()) %>' Width="53px" Height="38px" ImageUrl='<%# ReturnImage(Eval("vID").ToString()) %>' />
                                     </div>
@@ -48,7 +48,7 @@
                                     ImageUrl="images/map_e.png" onclick="ibsag_Click" />
                             </div>                            
                         </div>
-                        <div style="width:530px; margin-left:32px; float:left; text-align:center; max-height:17px;">
+                        <div style="margin-left:32px; float:left; text-align:center; max-height:17px;">
                             <asp:Label runat="server" ID="lbl1" Width="49px" Text="50" Font-Size="Small" ></asp:Label>
                             <asp:Label runat="server" ID="lbl2" Width="49px" Text="50" Font-Size="Small" ></asp:Label>
                             <asp:Label runat="server" ID="lbl3" Width="49px" Text="50" Font-Size="Small" ></asp:Label>
