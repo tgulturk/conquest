@@ -10,7 +10,7 @@
         <br />
         <asp:UpdatePanel ID="UP2" runat="server">
             <ContentTemplate>
-                <asp:Repeater ID="rep1" runat="server">
+                <asp:Repeater ID="rep1" runat="server" onitemcommand="rep1_ItemCommand">
                     <HeaderTemplate>
                         <table style=" border:1px solid white; background-color:#C1A264">
                             <tr >

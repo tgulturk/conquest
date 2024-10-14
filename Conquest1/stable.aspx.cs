@@ -37,6 +37,12 @@ namespace Conquest1
             }
         }
 
+        protected void rep1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            String islemID = (e.Item.FindControl("id") as Label).Text;
+            String temp = con.DeleteAskerIslem(islemID);
+        }
+
         protected void btnYetistir_Click(object sender, EventArgs e)
         {
             String villageID = Session["VillageID"].ToString();

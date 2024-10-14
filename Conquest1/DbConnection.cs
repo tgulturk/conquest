@@ -1780,6 +1780,29 @@ namespace Conquest1
             }
         } // bina işlemini iptal et
 
+        public String DeleteAskerIslem(String islemID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Delete from AskerIslem where islemID=@a", con);
+                sc.Parameters.AddWithValue("@a", islemID);
+                sc.ExecuteNonQuery();
+
+                return "eklendi";
+            }
+
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        } // asker işlemini iptal et
+
         public String BinaIslemValid(String villageID, String bID, String kil, String odun, String demir)
         {
             try
@@ -1926,7 +1949,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select m.islemID,'Dönüyor: '+v.vName as vName,'' as odun,'' as kil,'' as demir,m.mCount, "+
+                SqlCommand sc = new SqlCommand("Select m.islemID,'Dönüyor: '+v.vName as vName,m.odun,m.kil,m.demir,m.mCount, " +
 	                    "left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),m.rtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure, "+
 	                    "convert(VARCHAR, m.rtime, 0) as endtime "+
 	                    "from MarketIslem m,Villages v,Villages v2 "+
@@ -2016,7 +2039,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Insert into MarketIslem Values(@vID,@gvID,@kil,@odun,@demir,@mCount,DATEADD(second,@sure,GETDATE()),DATEADD(second,@sure*2,GETDATE()),0)", con);
+                SqlCommand sc = new SqlCommand("Insert into MarketIslem Values(@vID,@gvID,@kil,@odun,@demir,@mCount,DATEADD(second,@sure,GETDATE()),DATEADD(second,@sure*2,GETDATE()),0,GETDATE())", con);
                 sc.Parameters.AddWithValue("@vID", villageID);
                 sc.Parameters.AddWithValue("@gvID", gvID);
                 sc.Parameters.AddWithValue("@kil", kil);
@@ -2720,6 +2743,29 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Update SaldiriIslem set rtime = DATEADD(second,DATEDIFF(second,stime,GETDATE()),GETDATE()),issended=1 where islemID=@a", con);
+                sc.Parameters.AddWithValue("@a", islemID);
+                sc.ExecuteNonQuery();
+
+                return "eklendi";
+            }
+
+            catch (Exception ex)
+            {
+                return ex.ToString();
+            }
+
+            finally
+            {
+                con.Close();
+            }
+        } // saldırı işlemi sil
+
+        public String DeleteMarketIslem(String islemID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Update MarketIslem set rtime = DATEADD(second,DATEDIFF(second,stime,GETDATE()),GETDATE()),issended=1 where islemID=@a", con);
                 sc.Parameters.AddWithValue("@a", islemID);
                 sc.ExecuteNonQuery();
 

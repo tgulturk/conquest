@@ -94,10 +94,14 @@ namespace Conquest1
         {
             String villageID = Session["VillageID"].ToString();
             DataTable dt = con.Madenler(villageID);
-            if ((tbOdun.Text == "" ? 0 : Convert.ToInt32(tbOdun.Text)) <= Convert.ToInt32(dt.Rows[0]["Miktar"].ToString())
-                && (tbOdun.Text == "" ? 0 : Convert.ToInt32(tbOdun.Text)) >= 0 && (tbKil.Text == "" ? 0 : Convert.ToInt32(tbKil.Text)) <= Convert.ToInt32(dt.Rows[1]["Miktar"].ToString())
-                && (tbKil.Text == "" ? 0 : Convert.ToInt32(tbKil.Text)) >= 0 && (tbDemir.Text == "" ? 0 : Convert.ToInt32(tbDemir.Text)) <= Convert.ToInt32(dt.Rows[2]["Miktar"].ToString())
-                && (tbDemir.Text == "" ? 0 : Convert.ToInt32(tbDemir.Text)) >= 0)
+
+            int kil = tbKil.Text == "" ? 0 : Convert.ToInt32(tbKil.Text);
+            int odun = tbOdun.Text == "" ? 0 : Convert.ToInt32(tbOdun.Text);
+            int demir = tbDemir.Text == "" ? 0 : Convert.ToInt32(tbDemir.Text);
+
+            if (odun <= Convert.ToInt32(dt.Rows[0]["Miktar"].ToString()) && odun >= 0 
+                && kil <= Convert.ToInt32(dt.Rows[1]["Miktar"].ToString()) && kil >= 0 
+                && demir <= Convert.ToInt32(dt.Rows[2]["Miktar"].ToString()) && demir >= 0)
             {
                 int vID = con.getvillageID(tbX.Text, tbY.Text);
 
@@ -109,10 +113,7 @@ namespace Conquest1
                     int y2 = Convert.ToInt32(con.getvillageY(villageID));
                     int x = Math.Abs(x1 - x2);
                     int y = Math.Abs(y1 - y2);
-                    int kil = Convert.ToInt32(tbKil.Text);
-                    int odun = Convert.ToInt32(tbOdun.Text);
-                    int demir = Convert.ToInt32(tbDemir.Text);
-                    double toplam = Convert.ToInt32(tbOdun.Text) + Convert.ToInt32(tbKil.Text) + Convert.ToInt32(tbDemir.Text);
+                    double toplam = odun + kil + demir;
 
                     int saniye = Convert.ToInt32(Math.Ceiling(Math.Sqrt((x * x) + (y * y))*90));
                     int mCount = Convert.ToInt32(Math.Ceiling(toplam / 1000));
@@ -139,6 +140,12 @@ namespace Conquest1
             {
                 lblHata.Text = "Girilen Madenler Hatalı";
             }
+        }
+
+        protected void rep1_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            String islemID = (e.Item.FindControl("id") as Label).Text;
+            String temp = con.DeleteMarketIslem(islemID);
         }
     }
 }

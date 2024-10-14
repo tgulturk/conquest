@@ -216,8 +216,8 @@ namespace Conquest1
         protected void lbSendResources_Click(object sender, EventArgs e)
         {
             String vID = Session["mvID"].ToString();
-            Session["sX"] = con.getvillageX(vID);
-            Session["sY"] = con.getvillageY(vID);
+            Session["mX"] = con.getvillageX(vID);
+            Session["mY"] = con.getvillageY(vID);
             Response.Redirect("market.aspx");
         }
 
