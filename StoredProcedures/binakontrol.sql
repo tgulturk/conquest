@@ -1,6 +1,6 @@
-USE [ConquestBackup2]
+USE [ConquestGame]
 GO
-/****** Object:  StoredProcedure [dbo].[BinaKontrol]    Script Date: 10.10.2024 19:09:25 ******/
+/****** Object:  StoredProcedure [dbo].[BinaKontrol]    Script Date: 14.10.2024 18:34:19 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -72,14 +72,18 @@ BEGIN
 				Update VillageResources set rCount+=(Select odun from @tablo) where vID=(Select gvID from @tablo) and rID=1
 				Update VillageResources set rCount+=(Select kil from @tablo) where vID=(Select gvID from @tablo) and rID=2
 				Update VillageResources set rCount+=(Select demir from @tablo) where vID=(Select gvID from @tablo) and rID=3
-				Update MarketIslem set issended=1 where islemID = (Select islemID from @tablo)
+				Update MarketIslem set issended=1,odun = 0, kil = 0, demir = 0 where islemID = (Select islemID from @tablo)
 				Insert into MarketRapor Values((Select vID from @tablo),(Select gvID from @tablo),(Select odun from @tablo),
 					(Select kil from @tablo),(Select demir from @tablo),GETDATE(),0,0,0)
+				Update @tablo set odun = 0, kil = 0, demir = 0
 			end
 			ELSE
 			begin
 				IF(@mtur=1)
 				begin
+					Update VillageResources set rCount+=(Select odun from MarketIslem where islemID=(Select islemID from @tablo)) where vID=(Select vID from MarketIslem where islemID=(Select islemID from @tablo)) and rID=1
+					Update VillageResources set rCount+=(Select kil from MarketIslem where islemID=(Select islemID from @tablo)) where vID=(Select vID from MarketIslem where islemID=(Select islemID from @tablo)) and rID=2
+					Update VillageResources set rCount+=(Select demir from MarketIslem where islemID=(Select islemID from @tablo)) where vID=(Select vID from MarketIslem where islemID=(Select islemID from @tablo)) and rID=3
 					Delete from MarketIslem where islemID = (Select islemID from @tablo)
 				end
 			end
