@@ -23,7 +23,7 @@
                                 <table style="width:410px; border:1px solid white; background-color:#F4E4BC">
                                     <tr <%# FormatColorRow(DataBinder.Eval(Container.DataItem,"userName").ToString()) %>>
                                         <td style="width:60px"><asp:Label runat="server" ID="Name" Text='<%#Eval("Sira")%>' Width="60px"></asp:Label></td>
-                                        <td style="width:160px"><asp:LinkButton ID="lbProfil" runat="server" Text='<%#Eval("userName") %>' Width="160px" Font-Bold="True" 
+                                        <td style="width:160px;"><asp:LinkButton ID="lbProfil" runat="server" Text='<%#Eval("userName") %>' CssClass="username" Width="160px" Font-Bold="True" 
                                             ForeColor="#702604" Font-Size="Small"></asp:LinkButton></td>
                                         <td style="width:70px"><asp:Label runat="server" ID="Date" Width="70px" Text='<%#Eval("puan")%>' ></asp:Label></td> 
                                         <td style="width:60px"><asp:Label runat="server" ID="id" Width="60px" Text='<%#Eval("VSayi")%>'></asp:Label></td> 

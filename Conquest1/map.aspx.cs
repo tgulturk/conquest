@@ -109,7 +109,7 @@ namespace Conquest1
         protected void ibalt_Click(object sender, ImageClickEventArgs e)
         {
             var y = Convert.ToInt32(Session["y"].ToString()) + 10;
-            Session["y"] = y > 50 ? 50 : y;
+            Session["y"] = y > 40 ? 40 : y;
             HaritaCiz();
         }
 
@@ -123,7 +123,7 @@ namespace Conquest1
         protected void ibsag_Click(object sender, ImageClickEventArgs e)
         {
             var x = Convert.ToInt32(Session["x"].ToString()) + 10;
-            Session["x"] = x > 50 ? 50 : x;
+            Session["x"] = x > 40 ? 40 : x;
             HaritaCiz();
         }
 

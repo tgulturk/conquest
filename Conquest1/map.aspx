@@ -69,7 +69,9 @@
                         <div style="margin-left:32px; width:130px;">
                             <div style="width:109px; min-height:10px;">&nbsp</div>
                             <div style="margin-left:1px; margin-right:4px; background-color:White; height:14px; width:14px; border:1px solid grey; float:left;"></div>
-                            <div style="float:left;"><asp:Label ID="lblsenin" runat="server" Text="Senin Köyün" Font-Size="Smaller" ></asp:Label></div><br />
+                            <div style="float:left;"><asp:Label ID="lblaktif" runat="server" Text="Aktif Köyün" Font-Size="Smaller" ></asp:Label></div><br />
+                            <div style="margin-left:1px; margin-right:4px; background-color:yellow; height:14px; width:14px; border:1px solid grey; float:left;"></div>
+                            <div style="float:left;"><asp:Label ID="lblsenin" runat="server" Text="Sana Ait Köy" Font-Size="Smaller" ></asp:Label></div><br />
                             <div style="margin-left:1px; margin-right:4px; background-color:Red; height:14px; width:14px; border:1px solid grey; float:left;"></div>
                             <div style="float:left;"><asp:Label ID="Label11" runat="server" Text="Düşman Köyler" Font-Size="Smaller" ></asp:Label></div>
                         </div>
