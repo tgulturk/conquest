@@ -2,7 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+<script type="text/javascript">
+    function toggleCheckboxes(master) {
+        var checkboxes = document.querySelectorAll('input[type="checkbox"][id*="Cb"]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = master.checked;
+        }
+    }
+</script>
     <div id="messageswrapper">
         <div style="height:30px; width:95%; padding-left:20px;">
             <h3>Raporlar</h3>
@@ -44,8 +51,10 @@
                         onactiveviewchanged="MultiView1_ActiveViewChanged">
                         <asp:View ID="View1" runat="server">
                             <div style=" margin-top:10px; overflow: -moz-scrollbars-vertical; overflow-y: auto;  height:auto; border-left:1px solid grey; ">
-                                <asp:Label ID="lb1" runat="server" Width="30px" Text=""></asp:Label>
-                                <asp:Label ID="lblKisi" runat="server" Width="520px" Text="Konu"></asp:Label>
+                                <asp:Label ID="lb1" runat="server" Width="30px" Text="" Style="padding-left: 3px;">
+                                    <asp:CheckBox ID="chkSelectAll" runat="server" Text="" OnClick="toggleCheckboxes(this)" />
+                                </asp:Label>
+                                <asp:Label ID="lblKisi" runat="server" Width="502px" Text="Konu"></asp:Label>
                                 <asp:Label ID="Label99" runat="server" Width="150px" Text="Tarih"></asp:Label>
                                 <asp:Repeater ID="rep" runat="server" onitemcommand="rep_ItemCommand">
                                     <HeaderTemplate>                                

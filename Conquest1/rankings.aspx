@@ -14,7 +14,7 @@
                                     <td style="width:160px"><asp:Label ID="Label1" runat="server" Width="160px" Text="İsim"></asp:Label></td>
                                     <td style="width:70px"><asp:Label ID="Label2" runat="server" Width="70px" Text="Puan"></asp:Label></td>
                                     <td style="width:60px"><asp:Label ID="Label3" runat="server" Width="60px" Text="Köyler"></asp:Label></td>
-                                    <td style="width:100px"><asp:Label ID="Label4" runat="server" Width="120px" Text="Köyün Puan Ortalaması"></asp:Label></td>
+                                    <td style="width:100px"><asp:Label ID="Label4" runat="server" Width="120px" Text="Ort. Puan"></asp:Label></td>
                                     </tr>
                                 </table>                                
                                 <hr style=""/>

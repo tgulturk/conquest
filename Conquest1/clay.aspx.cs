@@ -22,7 +22,7 @@ namespace Conquest1
                 string villageID = Session["VillageID"].ToString();
                 DataTable dt1 = con.MadenArtisBilgi(villageID, "3");
                 lblseviye.Text = con.getBuildingLevel(villageID, "3");
-                lblguncel.Text = dt1.Rows[0]["Miktar"].ToString();
+                lblguncel.Text = Math.Round(Convert.ToDouble(dt1.Rows[0]["Miktar"])).ToString();
 
                 if (lblseviye.Text == "30")
                 {
@@ -30,7 +30,7 @@ namespace Conquest1
                 }
                 else
                 {
-                    lblsonraki.Text = dt1.Rows[1]["Miktar"].ToString();
+                    lblsonraki.Text = Math.Round(Convert.ToDouble(dt1.Rows[1]["Miktar"])).ToString();
                 }
 
             }
