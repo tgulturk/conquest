@@ -295,25 +295,25 @@ body {
     -webkit-box-shadow: 6px 8px 6px -7px black;
     box-shadow:         6px 8px 6px -7px black;
     }
-         
-#villageunits
-{
-    padding-top:5%;
-    padding-left:5%;
-    width:95%;
+
+#villageunits {
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    width: 95%;
     /*height:32%;*/
-    min-height:85px;
-    max-height:175px;
+    min-height: 85px;
+    max-height: 175px;
     /*border:1px gray solid;*/
-    margin-top:3%;
+    margin-top: 3%;
     background: #f2e4c1 url(images/bg_tek.png) scroll left top repeat-x;
     border-radius: 10px; /* Standart */
     -moz-border-radius: 10px; /* Firefox */
     -webkit-border-radius: 10px; /* Safari ve Chrome */
-    -moz-box-shadow:    6px 8px 6px -7px black;
+    -moz-box-shadow: 6px 8px 6px -7px black;
     -webkit-box-shadow: 6px 8px 6px -7px black;
-    box-shadow:         6px 8px 6px -7px black;
-    }
+    box-shadow: 6px 8px 6px -7px black;
+}
 
 #events
 {
@@ -591,4 +591,12 @@ body {
     text-overflow: ellipsis;
     display: block;
     width: 160px; 
+}
+
+.eventName {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    width: 150px; 
 }

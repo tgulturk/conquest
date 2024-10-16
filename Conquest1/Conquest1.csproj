@@ -85,6 +85,8 @@
     <Content Include="farm.aspx" />
     <Content Include="images\9742-Navi-Spear-large.jpg" />
     <Content Include="images\Adsız.jpg" />
+    <Content Include="images\arrow-left.png" />
+    <Content Include="images\attack.png" />
     <Content Include="images\b3.png" />
     <Content Include="images\background1.jpg" />
     <Content Include="images\bandit.png" />
@@ -97,6 +99,7 @@
     <Content Include="images\bg_tek.png" />
     <Content Include="images\clay.png" />
     <Content Include="images\content.jpg" />
+    <Content Include="images\defence.png" />
     <Content Include="images\depo.png" />
     <Content Include="images\footer-bg.png" />
     <Content Include="images\gras1.png" />
@@ -118,6 +121,7 @@
     <Content Include="images\papirus.png" />
     <Content Include="images\pop.png" />
     <Content Include="images\repeater.jpg" />
+    <Content Include="images\shield.png" />
     <Content Include="images\spear.png" />
     <Content Include="images\topbar-left.png" />
     <Content Include="images\topbar-main.png" />

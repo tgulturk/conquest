@@ -2546,7 +2546,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select '->  '+v.vName as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure "+
+                SqlCommand sc = new SqlCommand("Select v.vName as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure "+
 	                    "from SaldiriIslem s inner join Villages v on s.gvID=v.vID where s.vID=@a and s.issended=0", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
@@ -2574,7 +2574,7 @@ namespace Conquest1
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select '<-  '+v.vName as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure "+
+                SqlCommand sc = new SqlCommand("Select v.vName as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure "+
 	                    "from SaldiriIslem s inner join Villages v on s.vID=v.vID where gvID=@a and s.issended=0", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
@@ -2597,13 +2597,41 @@ namespace Conquest1
             }
         } // ana sayfa için gelen saldırıları getir
 
+        public DataTable DonenSaldiriDef(string villageID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select v.vName as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.rtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure " +
+                                               "from SaldiriIslem s inner join Villages v on s.gvID = v.vID where s.vID = @a and s.issended = 1", con);
+                sc.Parameters.AddWithValue("@a", villageID);
+                sc.ExecuteNonQuery();
+
+                SqlDataAdapter da = new SqlDataAdapter();
+                da.SelectCommand = sc;
+
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch
+            {
+                return null;
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // ana sayfa için dönen saldırıları getir
+
         public DataTable SaldırıRapor(string userID)
         {
             try
             {
                 con.Open();
-                SqlCommand sc = new SqlCommand("Select r.reportID,v.vName+' '+v2.vName+'ne saldırdı.' as Konu,r.date as senddate,issendread as Okundumu from SaldiriRapor r,Villages v,Villages v2,Users u "+
-	                    "where r.vID=v.vID and r.gvID=v2.vID and u.userID=v.uID and issenddelete=0 and u.userID=@a order by r.date desc", con);
+                SqlCommand sc = new SqlCommand("Select r.reportID,v.vName+' '+v2.vName+'ne'+' ('+CAST(v2.vX AS VARCHAR(255))+' | '+CAST(v2.vY AS VARCHAR(255))+') saldırdı.' as Konu,r.date as senddate,issendread as Okundumu from SaldiriRapor r,Villages v,Villages v2,Users u "+
+                    "where r.vID = v.vID and r.gvID = v2.vID and u.userID = v.uID and issenddelete = 0 and u.userID = @a order by r.date desc", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 sc.ExecuteNonQuery();
 

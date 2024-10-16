@@ -115,6 +115,12 @@ namespace Conquest1
                     int y = Math.Abs(y1 - y2);
                     double toplam = odun + kil + demir;
 
+                    if (x1 == x2 && y1 == y2)
+                    {
+                        lblHata.Text = "Aynı köye maden gönderemezsin.";
+                        return;
+                    }
+
                     int saniye = Convert.ToInt32(Math.Ceiling(Math.Sqrt((x * x) + (y * y))*90));
                     int mCount = Convert.ToInt32(Math.Ceiling(toplam / 1000));
                     int TSayi = con.getMerInVillage(villageID);

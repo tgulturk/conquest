@@ -56,7 +56,7 @@ namespace Conquest1
             var sure = con.getBinaInsaatSure(villageID, bID);
 
             String valid = con.BinaIslemValid(villageID, bID, kil, odun, demir);
-            Boolean valid2 = MadenKontrol(kil, odun, demir);
+            Boolean valid2 = InsaKontrol(kil, odun, demir);
             if (valid == "0" && valid2==true)
             {
 
@@ -66,7 +66,7 @@ namespace Conquest1
             //Response.Redirect("main.aspx");
         }
 
-        public bool MadenKontrol(string kil,string odun,string demir)
+        public bool InsaKontrol(string kil,string odun,string demir)
         {
             string villageID = Session["VillageID"].ToString();
             DataTable dt = con.Madenler(villageID);
@@ -83,6 +83,17 @@ namespace Conquest1
             {
                 return true;
             }
+        }
+
+        public string MadenKontrol(string maden, int madenTur)
+        {
+            string villageID = Session["VillageID"].ToString();
+            DataTable dt = con.Madenler(villageID);
+
+            int gerekliMaden = Convert.ToInt32(maden);
+            int madenMiktar = Convert.ToInt32(dt.Rows[madenTur]["Miktar"].ToString());
+
+            return gerekliMaden <= madenMiktar ? "#000000": "#dc0000";
         }
 
     }

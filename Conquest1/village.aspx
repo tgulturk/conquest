@@ -42,9 +42,12 @@
                         <ContentTemplate>
                             <asp:Repeater runat="server" ID="repe">
                                 <ItemTemplate>
-                                    <table>
+                                    <table style="font-weight: bold; color: #dc0000">
                                         <tr>
-                                            <td style="width:180px"><asp:Label runat="server" ID="LabelS" Text='<%#Eval("vName")%>' Font-Size="Small"></asp:Label></td>
+                                            <td style="width:25px">
+                                                <img src="images/shield.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;" />
+                                            </td>
+                                            <td class="eventName"><asp:Label runat="server" ID="LabelS" Text='<%#Eval("vName")%>' Font-Size="Small"></asp:Label></td>
                                             <td style="width:100px"><asp:Label runat="server" ID="lblKalan" Text='<%#Eval("Sure")%>'  Font-Size="Small"></asp:Label></td>
                                         </tr>
                                     </table>
@@ -54,7 +57,23 @@
                                 <ItemTemplate>
                                     <table>
                                         <tr>
-                                            <td style="width:180px"><asp:Label runat="server" ID="LabelS" Text='<%#Eval("vName")%>' Font-Size="Small"></asp:Label></td>
+                                            <td style="width:25px">
+                                                <img src="images/attack.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;" />
+                                            </td>
+                                            <td class="eventName"><asp:Label runat="server" ID="LabelS" Text='<%#Eval("vName")%>' Font-Size="Small"></asp:Label></td>
+                                            <td style="width:100px"><asp:Label runat="server" ID="lblKalan" Text='<%#Eval("Sure")%>'  Font-Size="Small"></asp:Label></td>
+                                        </tr>
+                                    </table>
+                                </ItemTemplate>
+                            </asp:Repeater>
+                            <asp:Repeater runat="server" ID="repe3">
+                                <ItemTemplate>
+                                    <table>
+                                        <tr>
+                                            <td style="width:25px">
+                                                <img src="images/arrow-left.png" alt="Icon" style="width: 16px; height: 16px; vertical-align: middle; margin-right: 5px;" />
+                                            </td>
+                                            <td class="eventName"><asp:Label runat="server" ID="LabelS" Text='<%#Eval("vName")%>' Font-Size="Small"></asp:Label></td>
                                             <td style="width:100px"><asp:Label runat="server" ID="lblKalan" Text='<%#Eval("Sure")%>'  Font-Size="Small"></asp:Label></td>
                                         </tr>
                                     </table>

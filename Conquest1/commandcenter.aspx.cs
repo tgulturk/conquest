@@ -123,6 +123,12 @@ namespace Conquest1
                         int x = Math.Abs(x1 - x2);
                         int y = Math.Abs(y1 - y2);
 
+                        if (x1 == x2 && y1 == y2)
+                        {
+                            lblHata.Text = "Askerler kendi köyüne saldıramaz.";
+                            return;
+                        }
+
                         int saniye = Convert.ToInt32(Math.Ceiling(Math.Sqrt((x * x) + (y * y)) * hız));
 
                         String dönen = con.addSaldiriIslem(villageID, vID, saniye);

@@ -24,7 +24,7 @@
         }
 
         function clearAllInputs() {
-            var inputs = document.querySelectorAll('table input[type="number"]');
+            var inputs = document.querySelectorAll('table input[type="text"]');
 
             inputs.forEach(function (input) {
                 input.value = "";

@@ -37,6 +37,8 @@ namespace Conquest1
                 repe.DataBind();
                 repe2.DataSource = con.GidenSaldiriDef(villageID);
                 repe2.DataBind();
+                repe3.DataSource = con.DonenSaldiriDef(villageID);
+                repe3.DataBind();
             }
         }
 
