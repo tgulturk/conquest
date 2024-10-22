@@ -149,6 +149,49 @@ namespace Conquest1
                 }
             }
         }
+        protected void TimerVaris_Tick(object sender, EventArgs e)
+        {
+            String villageID = Session["VillageID"].ToString();
+
+            int[] ordu = new int[7];
+            ordu[0] = Convert.ToInt32(tbMizrak.Text == "" ? "0" : tbMizrak.Text);
+            ordu[1] = Convert.ToInt32(tbKilic.Text == "" ? "0" : tbKilic.Text);
+            ordu[2] = Convert.ToInt32(tbBaltaci.Text == "" ? "0" : tbBaltaci.Text);
+            ordu[3] = Convert.ToInt32(tbCasus.Text == "" ? "0" : tbCasus.Text);
+            ordu[4] = Convert.ToInt32(tbHafif.Text == "" ? "0" : tbHafif.Text);
+            ordu[5] = Convert.ToInt32(tbAgir.Text == "" ? "0" : tbAgir.Text);
+            ordu[6] = Convert.ToInt32(tbMisyoner.Text == "" ? "0" : tbMisyoner.Text);
+
+            if (ordu[0] == 0 && ordu[1] == 0 && ordu[2] == 0 && ordu[3] == 0 && ordu[4] == 0 && ordu[5] == 0 && ordu[6] == 0)
+            {
+                lblVaris.Visible = false; 
+                lblVarisText.Visible = false; 
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(tbX.Text) || string.IsNullOrWhiteSpace(tbY.Text))
+            {
+                lblVaris.Visible = false;
+                lblVarisText.Visible = false;
+                return;
+            }
+
+            int hız = HızBul(ordu);
+
+            int x1 = Convert.ToInt32(tbX.Text);
+            int y1 = Convert.ToInt32(tbY.Text);
+            int x2 = Convert.ToInt32(con.getvillageX(villageID));
+            int y2 = Convert.ToInt32(con.getvillageY(villageID));
+            int x = Math.Abs(x1 - x2);
+            int y = Math.Abs(y1 - y2);
+
+            int saniye = Convert.ToInt32(Math.Ceiling(Math.Sqrt((x * x) + (y * y)) * hız));
+
+            lblVaris.Text = DateTime.Now.AddSeconds(saniye).ToString();
+            lblVaris.Visible = true;
+            lblVarisText.Visible = true;
+            updVaris.Update();
+        }
 
         protected void rep1_ItemCommand(object source, RepeaterCommandEventArgs e)
         {

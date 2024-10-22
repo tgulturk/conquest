@@ -277,18 +277,33 @@ namespace Conquest1
 
         protected void lbGonderen_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lbGonderen.Text))
+            {
+                return;
+            }
+
             Session["user"] = lbGonderen.Text;
             Response.Redirect("rankings.aspx");
         }
 
         protected void lbAlici_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lbAlici.Text))
+            {
+                return;
+            }
+
             Session["user"] = lbAlici.Text;
             Response.Redirect("rankings.aspx");
         }
 
         protected void lbRgonderen_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lbRgonderen.Text))
+            {
+                return;
+            }
+
             Session["user"] = lbRgonderen.Text;
             Response.Redirect("rankings.aspx");
         }
@@ -306,6 +321,11 @@ namespace Conquest1
 
         protected void lbRalici_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(lbRalici.Text))
+            {
+                return;
+            }
+
             Session["user"] = lbRalici.Text;
             Response.Redirect("rankings.aspx");
         }

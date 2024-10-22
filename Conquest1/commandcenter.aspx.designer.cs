@@ -267,6 +267,42 @@ namespace Conquest1
         protected global::System.Web.UI.WebControls.Label lblHata;
 
         /// <summary>
+        /// updVaris control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel updVaris;
+
+        /// <summary>
+        /// lblVarisText control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVarisText;
+
+        /// <summary>
+        /// lblVaris control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblVaris;
+
+        /// <summary>
+        /// TimerVaris control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer TimerVaris;
+
+        /// <summary>
         /// UP2 control.
         /// </summary>
         /// <remarks>

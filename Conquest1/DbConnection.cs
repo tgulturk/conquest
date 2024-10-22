@@ -2429,7 +2429,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select s.islemID,'Gidiyor : '+v.vName+'ne' as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure, "+
-	                    "convert(VARCHAR, s.gtime, 0) as endtime from SaldiriIslem s inner join Villages v on s.gvID=v.vID where s.vID=@a and s.issended=0", con);
+                        "FORMAT(s.gtime, 'dd.MM.yyyy HH:mm:ss') as endtime from SaldiriIslem s inner join Villages v on s.gvID=v.vID where s.vID=@a and s.issended=0", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
 
@@ -2457,7 +2457,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select s.islemID,'Dönüyor :'+v.vName+'ne' as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.rtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure, " +
-	                    "convert(VARCHAR, s.rtime, 0) as endtime from SaldiriIslem s inner join Villages v on s.vID=v.vID where s.vID=@a and s.issended=1", con);
+                        "FORMAT(s.rtime, 'dd.MM.yyyy HH:mm:ss') as endtime from SaldiriIslem s inner join Villages v on s.vID=v.vID where s.vID=@a and s.issended=1", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
 
@@ -2485,7 +2485,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select s.islemID,'Geliyor : '+v.vName+'nden' as vName,left(right(convert(varchar,dateadd(second,DATEDIFF(s,GETDATE(),s.gtime),'01/01/1901 0:0:0.000'),121),12),8) as Sure, " +
-	                    "convert(VARCHAR, s.gtime, 0) as endtime from SaldiriIslem s inner join Villages v on s.vID=v.vID where gvID=@a and s.issended=0", con);
+                        "FORMAT(s.gtime, 'dd.MM.yyyy HH:mm:ss') as endtime from SaldiriIslem s inner join Villages v on s.vID=v.vID where gvID=@a and s.issended=0", con);
                 sc.Parameters.AddWithValue("@a", villageID);
                 sc.ExecuteNonQuery();
 
@@ -2631,7 +2631,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select r.reportID,v.vName+' '+v2.vName+'ne'+' ('+CAST(v2.vX AS VARCHAR(255))+' | '+CAST(v2.vY AS VARCHAR(255))+') saldırdı.' as Konu,r.date as senddate,issendread as Okundumu from SaldiriRapor r,Villages v,Villages v2,Users u "+
-                    "where r.vID = v.vID and r.gvID = v2.vID and u.userID = v.uID and issenddelete = 0 and u.userID = @a order by r.date desc", con);
+                    "where r.vID = v.vID and r.gvID = v2.vID and u.userID = r.vUID and issenddelete = 0 and u.userID = @a order by r.date desc", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 sc.ExecuteNonQuery();
 
@@ -2659,7 +2659,7 @@ namespace Conquest1
             {
                 con.Open();
                 SqlCommand sc = new SqlCommand("Select r.reportID,v.vName+' '+v2.vName+'ne saldırdı.' as Konu,r.date as senddate,isgetread as Okundumu from SaldiriRapor r,Villages v,Villages v2,Users u "+
-	                    "where r.vID=v.vID and r.gvID=v2.vID and u.userID=v2.uID and isgetdelete=0 and u.userID=@a order by r.date desc", con);
+                        "where r.vID=v.vID and r.gvID=v2.vID and u.userID=r.gvUID and isgetdelete=0 and u.userID=@a order by r.date desc", con);
                 sc.Parameters.AddWithValue("@a", userID);
                 sc.ExecuteNonQuery();
 
@@ -2736,7 +2736,8 @@ namespace Conquest1
                                                "u.userName,v.vName,CONVERT(nvarchar,v.vX) + '|' + CONVERT(nvarchar,v.vY) as vACoordinate," +
                                                "u2.userName as userName2,v2.vName as vName2,CONVERT(nvarchar,v2.vX) + '|' + CONVERT(nvarchar,v2.vY) as vDCoordinate," +
                                                "case ismisyoner when 1 then 'Köyün bağlılığı '+CONVERT(nvarchar,s.misyonerred)+ " +
-	                    "' azaldı.' else '' end as durum,s.kil,s.odun,s.demir,case isscouted when 1 then wkil else '-' end as wkil, "+
+                                               "' azalarak '+CONVERT(nvarchar,s.oldLoyalty-s.misyonerred)+' oldu.' else '' end as durum," +
+                                               "s.kil,s.odun,s.demir,case isscouted when 1 then wkil else '-' end as wkil, " +
 	                    "case isscouted when 1 then wodun else '-' end as wodun,case isscouted when 1 then wdemir else '-' end as wdemir, "+
 	                    "case isscouted when 1 then walllevel else '-' end as walllevel from SaldiriRapor s,Villages v,Villages v2,Users u,Users u2 "+
 	                    "where s.vID=v.vID and s.gvID=v2.vID and v.uID=u.userID and v2.uID=u2.userID and s.reportID=@a", con);

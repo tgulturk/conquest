@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace Conquest1
 {
@@ -20,7 +21,7 @@ namespace Conquest1
             else
             {
                 String temp = con.BinaKontrolProc();
-                string userID = con.getuserID(Session["KULLANICI"].ToString()).ToString();
+                int userID = con.getuserID(Session["KULLANICI"].ToString());
                 string villageID = Session["VillageID"].ToString();
 
                 String lvl = con.getBuildingLevel(villageID, "12");
@@ -54,7 +55,23 @@ namespace Conquest1
                 rep2.DataBind();
                 rep3.DataSource = con.DonenMaden(villageID);
                 rep3.DataBind();
+                rep4.DataSource = con.getuservillages(userID);
+                rep4.DataBind();
             }
+        }
+
+        protected void rep4_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            string coordinates = (e.Item.FindControl("coordinate") as LinkButton).Text;
+
+            MatchCollection matches = Regex.Matches(coordinates, @"\d+");
+
+            if (matches.Count >= 2) 
+            {
+                tbX.Text = matches[0].Value; 
+                tbY.Text = matches[1].Value; 
+            }
+            
         }
 
         protected void tbOdun_TextChanged(object sender, EventArgs e)

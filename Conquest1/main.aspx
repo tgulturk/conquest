@@ -87,11 +87,11 @@
                         </td>
                         <td style="width:70px;"> 
                             <img src="images/clay.png" alt="Kil" style="width: 21px; height: 18px; vertical-align: middle;" />
-                            <asp:Label ID="lblkil" runat="server" Text='<%#Eval("Kil")%>' Font-Size="Small" style='<%# "color:" + MadenKontrol(Eval("Odun").ToString(), 1) + ";" %>'></asp:Label>
+                            <asp:Label ID="lblkil" runat="server" Text='<%#Eval("Kil")%>' Font-Size="Small" style='<%# "color:" + MadenKontrol(Eval("Kil").ToString(), 1) + ";" %>'></asp:Label>
                         </td>
                         <td style="width:70px;"> 
                             <img src="images/iron.png" alt="Demir" style="width: 21px; height: 18px; vertical-align: middle;" />
-                            <asp:Label ID="lbldemir" runat="server"  Text='<%#Eval("Demir")%>' Font-Size="Small" style='<%# "color:" + MadenKontrol(Eval("Odun").ToString(), 2) + ";" %>'></asp:Label>
+                            <asp:Label ID="lbldemir" runat="server"  Text='<%#Eval("Demir")%>' Font-Size="Small" style='<%# "color:" + MadenKontrol(Eval("Demir").ToString(), 2) + ";" %>'></asp:Label>
                         </td>
                         <td style="width:80px"><asp:Label ID="lblsure" runat="server" Width="80px" Text='<%#Eval("Sure")%>' Font-Size="Small"></asp:Label></td>
                         <td style="width:150px; text-align:center"><asp:LinkButton ID="lbInsaEt" runat="server" Width="150px" Text='<%#Eval("bLevel")+". Seviyeye Yükselt"%>' OnClientClick="DisableButton();" Font-Size="Small" ForeColor="#702604" Enabled='<%# InsaKontrol(Eval("Kil").ToString(),Eval("Odun").ToString(),Eval("Demir").ToString()) %>' EnableViewState="True"></asp:LinkButton></td>

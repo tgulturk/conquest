@@ -16,7 +16,6 @@
             // Eğer önceki td varsa içindeki input'u al
             if (previousTd) {
                 var textbox = previousTd.querySelector('input'); // TextBox'ı bul
-                console.log(textbox);
                 if (textbox) {
                     textbox.value = value; // TextBox'a değeri yaz
                 }
@@ -56,7 +55,7 @@
                                onClick="setValueToTextbox(this);"></asp:Label></td>
             </tr>
             <tr>
-                <td><asp:Label runat="server" ID="Label2" Text="Kılıç Ustası :" Height="24px" Width="85px"></asp:Label></td>
+                <td><asp:Label runat="server" ID="Label2" Text="Kılıç Ustası :" Height="24px" Width="100px"></asp:Label></td>
                 <td><asp:TextBox runat="server" ID="tbKilic" Width="60px"></asp:TextBox></td>
                 <td><asp:Label runat="server" ID="lblKilic" Height="24px" Width="60px" Font-Bold="true" Font-Size="Small" ForeColor="#702604"
                                onClick="setValueToTextbox(this);"></asp:Label></td>
@@ -102,6 +101,18 @@
                     </td>
                 </tr>
             </table>
+            <asp:UpdatePanel runat="server" ID="updVaris" UpdateMode="Conditional">
+                <ContentTemplate>
+                    <div style="margin-top: 5px; padding-left: 3px">
+                        <asp:Label runat="server" ID="lblVarisText" Height="24px" Text="Varış :" Width="55px" Visible="False"></asp:Label>
+                        <asp:Label runat="server" ID="lblVaris" Height="24px" Width="250px" Visible="False"></asp:Label>
+                    </div>
+                </ContentTemplate>
+                <Triggers>
+                    <asp:AsyncPostBackTrigger  ControlID="TimerVaris" EventName="Tick" />
+                </Triggers> 
+            </asp:UpdatePanel>
+            <asp:Timer ID="TimerVaris" runat="server" ontick="TimerVaris_Tick" Interval="1000"></asp:Timer>
             <br />
             <asp:UpdatePanel ID="UP2" runat="server">
             <ContentTemplate>
