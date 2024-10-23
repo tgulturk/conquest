@@ -243,6 +243,9 @@
                             <asp:Label runat="server" ID="lblBdurum" Text="" Font-Bold="true" Font-Size="Small"></asp:Label>                            
                             <br />&nbsp
                             <br />&nbsp
+                            <asp:Label runat="server" ID="lblSans" Text="" Font-Bold="true" Font-Size="Small"></asp:Label>   
+                            <br />&nbsp
+                            <br />&nbsp
                             <asp:Label runat="server" ID="lblblb" Text="Ganimetler :" Width="100px" Font-Bold="true" Font-Size="Small"></asp:Label>
                             <asp:Label ID="Label18" runat="server" Height="18px" Text="Odun :" Width="42px" 
                             Font-Bold="False" Font-Size="Small"></asp:Label>

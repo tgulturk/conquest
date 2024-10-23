@@ -190,11 +190,14 @@ namespace Conquest1
                 lblCkil.Text = dt.Rows[0]["wkil"].ToString();
                 lblCdemir.Text = dt.Rows[0]["wdemir"].ToString();
                 lblCduvar.Text = dt.Rows[0]["walllevel"].ToString();
+                lblSans.Text = dt.Rows[0]["sans"].ToString();
 
                 Session["vACoordinate"] = dt.Rows[0]["vACoordinate"].ToString();
                 Session["vDCoordinate"] = dt.Rows[0]["vDCoordinate"].ToString();
 
+                int saldiranSag = con.RaporOrduSagKalanSaldıranSayi(reportid);
                 DataTable dt2 = con.RaporOrduIcerik(reportid);
+                
                 lblSMmizrak.Text = dt2.Rows[0]["sCount"].ToString();
                 lblSKmizrak.Text = dt2.Rows[0]["skCount"].ToString();
                 lblDMmizrak.Text = dt2.Rows[0]["dCount"].ToString();
@@ -223,6 +226,25 @@ namespace Conquest1
                 lblSKmisyoner.Text = dt2.Rows[6]["skCount"].ToString();
                 lblDMmisyoner.Text = dt2.Rows[6]["dCount"].ToString();
                 lblDKmisyoner.Text = dt2.Rows[6]["dkCount"].ToString();
+                
+                if (viewindex == 0 && saldiranSag < 1)
+                {
+                    lblDMmizrak.Text = "X";
+                    lblDKmizrak.Text = "X";
+                    lblDMkilic.Text = "X";
+                    lblDKkilic.Text = "X";
+                    lblDMbaltaci.Text = "X";
+                    lblDKbaltaci.Text = "X";
+                    lblDMcasus.Text = "X";
+                    lblDKcasus.Text = "X";
+                    lblDMhafif.Text = "X";
+                    lblDKhafif.Text = "X";
+                    lblDMagir.Text = "X";
+                    lblDKagir.Text = "X";
+                    lblDMmisyoner.Text = "X";
+                    lblDKmisyoner.Text = "X";
+                }
+
                 MultiView1.ActiveViewIndex = 2;
             }
             else

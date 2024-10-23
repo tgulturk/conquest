@@ -2739,7 +2739,7 @@ namespace Conquest1
                                                "' azalarak '+CONVERT(nvarchar,s.oldLoyalty-s.misyonerred)+' oldu.' else '' end as durum," +
                                                "s.kil,s.odun,s.demir,case isscouted when 1 then wkil else '-' end as wkil, " +
 	                    "case isscouted when 1 then wodun else '-' end as wodun,case isscouted when 1 then wdemir else '-' end as wdemir, "+
-	                    "case isscouted when 1 then walllevel else '-' end as walllevel from SaldiriRapor s,Villages v,Villages v2,Users u,Users u2 "+
+                        "case isscouted when 1 then walllevel else '-' end as walllevel, 'Şans: '+ FORMAT(ROUND(s.sans, 2), 'N2')+'%' as sans from SaldiriRapor s,Villages v,Villages v2,Users u,Users u2 " +
 	                    "where s.vID=v.vID and s.gvID=v2.vID and v.uID=u.userID and v2.uID=u2.userID and s.reportID=@a", con);
                 sc.Parameters.AddWithValue("@a", reportID);
                 sc.ExecuteNonQuery();
@@ -2788,6 +2788,27 @@ namespace Conquest1
                 con.Close();
             }
         } // raporun ordu içeriğini getir
+
+        public int RaporOrduSagKalanSaldıranSayi(string reportID)
+        {
+            try
+            {
+                con.Open();
+                SqlCommand sc = new SqlCommand("Select SUM(sCount)-SUM(skCount) as kalan from RaporOrdu where reportID=@a", con);
+                sc.Parameters.AddWithValue("@a", reportID);
+                int count = (int)sc.ExecuteScalar();
+
+                return count;
+            }
+            catch
+            {
+                return 0;
+            }
+            finally
+            {
+                con.Close();
+            }
+        } // saldıranlardan sağ kalan sayısı getir
 
         public String DeleteSaldiriIslem(String islemID)
         {
